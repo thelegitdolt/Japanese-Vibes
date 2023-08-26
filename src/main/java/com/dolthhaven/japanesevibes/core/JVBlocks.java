@@ -40,8 +40,11 @@ public class JVBlocks {
 
     public static class Properties {
         public static BlockBehaviour.Properties getLanternPropsOfColor(MaterialColor color) {
-            return Block.Properties.of(Material.WOOL, color).strength(3.0F, 1200.0F).sound(SoundType.LANTERN).lightLevel(state -> 12);
+            return Block.Properties.of(Material.WOOL, color).strength(1f).sound(SoundType.LANTERN).lightLevel(state -> 12);
         }
+    }
+
+    public static class Shapes {
 
     }
 }
