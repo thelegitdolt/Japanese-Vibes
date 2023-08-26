@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "com.dolthhaven.japanesevibes.core.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "japanese_vibes.refmap.json",
+  "mixins": [],
+  "client": [],
+  "minVersion": "0.8"
+}
