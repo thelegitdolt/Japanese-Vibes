@@ -1,5 +1,6 @@
 package com.dolthhaven.japanesevibes.common.blocks;
 
+import com.dolthhaven.japanesevibes.core.registry.JVBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.LanternBlock;
@@ -16,6 +17,12 @@ public class UniqueLanternBlock extends LanternBlock {
         super(props);
         this.normal = normal;
         this.hanging = hanging;
+    }
+
+    public UniqueLanternBlock(Properties props) {
+        super(props);
+        this.normal =  JVBlocks.Shapes.VANILLA_LANTERN_AABB;
+        this.hanging = JVBlocks.Shapes.HANGING_VANILLA_LANTERN_AABB;
     }
 
     @Override

@@ -6,6 +6,7 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LanternBlock;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -44,10 +45,10 @@ public class JVBlockstatesProvider extends BlockStateProvider {
         this.paperLantern(PAPER_LANTERN_PINK, DyeColor.PINK);
         this.paperLantern(PAPER_LANTERN_BLACK, DyeColor.BLACK);
 
-        this.paperLantern(PAPER_LANTERN_BLACK_DOT, "black_dot");
-        this.paperLantern(PAPER_LANTERN_OBAKE, "obake");
-        this.paperLantern(PAPER_LANTERN_RED_DOT, "red_dot");
-        this.paperLantern(PAPER_LANTERN_SUN, "sun");
+        this.paperLanternSpecial(PAPER_LANTERN_BLACK_DOT, "black_dot");
+        this.paperLanternSpecial(PAPER_LANTERN_OBAKE, "obake");
+        this.paperLanternSpecial(PAPER_LANTERN_RED_DOT, "red_dot");
+        this.paperLanternSpecial(PAPER_LANTERN_SUN, "sun");
 
     }
 
@@ -58,10 +59,11 @@ public class JVBlockstatesProvider extends BlockStateProvider {
                 .partialState().with(LanternBlock.HANGING, false).addModels(existingModel("block/paper_lantern_" + color.getName()));
     }
 
-    private void paperLantern(RegistryObject<Block> lantern, String type) {
-        this.getVariantBuilder(lantern.get())
-                .partialState().with(LanternBlock.HANGING, true).addModels(existingModel("block/paper_lantern_" + type))
-                .partialState().with(LanternBlock.HANGING, false).addModels(existingModel("block/paper_lantern_" + type));
+    private void paperLanternSpecial(RegistryObject<Block> lantern, String type) {
+        this.getVariantBuilder(lantern.get()).forAllStates(blockState -> ConfiguredModel.builder()
+                .modelFile(new ModelFile.ExistingModelFile(JapaneseVibes.rlOf("block/paper_lantern_" + type), this.models().existingFileHelper))
+                .rotationY(((int) blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
+                .build());
     }
 
     private void paperLanternVanilla() {
