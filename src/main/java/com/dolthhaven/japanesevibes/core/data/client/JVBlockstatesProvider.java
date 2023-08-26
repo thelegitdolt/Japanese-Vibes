@@ -13,10 +13,9 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.Objects;
 import java.util.function.Supplier;
 
-import static com.dolthhaven.japanesevibes.core.JVBlocks.*;
+import static com.dolthhaven.japanesevibes.core.registry.JVBlocks.*;
 
 
 public class JVBlockstatesProvider extends BlockStateProvider {
@@ -26,6 +25,8 @@ public class JVBlockstatesProvider extends BlockStateProvider {
     }
     @Override
     protected void registerStatesAndModels() {
+        this.paperLanternVanilla();
+
         this.paperLantern(PAPER_LANTERN_WHITE, DyeColor.WHITE);
         this.paperLantern(PAPER_LANTERN_BROWN, DyeColor.BROWN);
         this.paperLantern(PAPER_LANTERN_GRAY, DyeColor.GRAY);
@@ -42,6 +43,12 @@ public class JVBlockstatesProvider extends BlockStateProvider {
         this.paperLantern(PAPER_LANTERN_MAGENTA, DyeColor.MAGENTA);
         this.paperLantern(PAPER_LANTERN_PINK, DyeColor.PINK);
         this.paperLantern(PAPER_LANTERN_BLACK, DyeColor.BLACK);
+
+        this.paperLantern(PAPER_LANTERN_BLACK_DOT, "black_dot");
+        this.paperLantern(PAPER_LANTERN_OBAKE, "obake");
+        this.paperLantern(PAPER_LANTERN_RED_DOT, "red_dot");
+        this.paperLantern(PAPER_LANTERN_SUN, "sun");
+
     }
 
 
@@ -49,7 +56,18 @@ public class JVBlockstatesProvider extends BlockStateProvider {
         this.getVariantBuilder(lantern.get())
                 .partialState().with(LanternBlock.HANGING, true).addModels(existingModel("block/paper_lantern_" + color.getName()))
                 .partialState().with(LanternBlock.HANGING, false).addModels(existingModel("block/paper_lantern_" + color.getName()));
+    }
 
+    private void paperLantern(RegistryObject<Block> lantern, String type) {
+        this.getVariantBuilder(lantern.get())
+                .partialState().with(LanternBlock.HANGING, true).addModels(existingModel("block/paper_lantern_" + type))
+                .partialState().with(LanternBlock.HANGING, false).addModels(existingModel("block/paper_lantern_" + type));
+    }
+
+    private void paperLanternVanilla() {
+        this.getVariantBuilder(PAPER_LANTERN.get())
+                .partialState().with(LanternBlock.HANGING, true).addModels(existingModel("block/paper_lantern"))
+                .partialState().with(LanternBlock.HANGING, false).addModels(existingModel("block/paper_lantern"));
     }
 
 

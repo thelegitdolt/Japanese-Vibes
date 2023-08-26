@@ -25,7 +25,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-import static com.dolthhaven.japanesevibes.core.JVBlocks.*;
+import static com.dolthhaven.japanesevibes.core.registry.JVBlocks.*;
 
 public class JVLoot extends LootTableProvider {
     private final Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet> blockTables = Pair.of(Blocks::new, LootContextParamSets.BLOCK);
@@ -53,6 +53,8 @@ public class JVLoot extends LootTableProvider {
     private static class Blocks extends BlockLoot {
         @Override
         protected void addTables() {
+            this.dropSelf(PAPER_LANTERN.get());
+
             this.dropSelf(PAPER_LANTERN_WHITE.get());
             this.dropSelf(PAPER_LANTERN_BROWN.get());
             this.dropSelf(PAPER_LANTERN_GRAY.get());
@@ -69,6 +71,11 @@ public class JVLoot extends LootTableProvider {
             this.dropSelf(PAPER_LANTERN_MAGENTA.get());
             this.dropSelf(PAPER_LANTERN_PINK.get());
             this.dropSelf(PAPER_LANTERN_BLACK.get());
+
+            this.dropSelf(PAPER_LANTERN_BLACK_DOT.get());
+            this.dropSelf(PAPER_LANTERN_OBAKE.get());
+            this.dropSelf(PAPER_LANTERN_RED_DOT.get());
+            this.dropSelf(PAPER_LANTERN_SUN.get());
         }
 
         @Override

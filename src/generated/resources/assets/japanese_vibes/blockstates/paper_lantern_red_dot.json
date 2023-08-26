@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "japanese_vibes:block/paper_lantern_red_dot"
+    },
+    "hanging=true": {
+      "model": "japanese_vibes:block/paper_lantern_red_dot"
+    }
+  }
+}

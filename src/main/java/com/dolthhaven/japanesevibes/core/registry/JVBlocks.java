@@ -1,6 +1,7 @@
-package com.dolthhaven.japanesevibes.core;
+package com.dolthhaven.japanesevibes.core.registry;
 
 
+import com.dolthhaven.japanesevibes.core.JapaneseVibes;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
@@ -16,6 +17,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class JVBlocks {
     public static final BlockSubRegistryHelper HELPER = JapaneseVibes.REGISTRY_HELPER.getBlockSubHelper();
 
+    public static final RegistryObject<Block> PAPER_LANTERN = HELPER.createBlock("paper_lantern", () -> new LanternBlock(Properties.getLanternPropsOfColor(MaterialColor.TERRACOTTA_WHITE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> PAPER_LANTERN_WHITE = HELPER.createBlock("paper_lantern_white", () -> new LanternBlock(Properties.getLanternPropsOfColor(MaterialColor.SNOW)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> PAPER_LANTERN_BROWN = HELPER.createBlock("paper_lantern_brown", () -> new LanternBlock(Properties.getLanternPropsOfColor(MaterialColor.COLOR_BROWN)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> PAPER_LANTERN_GRAY = HELPER.createBlock("paper_lantern_gray", () -> new LanternBlock(Properties.getLanternPropsOfColor(MaterialColor.COLOR_GRAY)), CreativeModeTab.TAB_BUILDING_BLOCKS);
@@ -32,7 +34,10 @@ public class JVBlocks {
     public static final RegistryObject<Block> PAPER_LANTERN_MAGENTA = HELPER.createBlock("paper_lantern_magenta", () -> new LanternBlock(Properties.getLanternPropsOfColor(MaterialColor.COLOR_MAGENTA)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> PAPER_LANTERN_PINK = HELPER.createBlock("paper_lantern_pink", () -> new LanternBlock(Properties.getLanternPropsOfColor(MaterialColor.COLOR_PINK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> PAPER_LANTERN_BLACK = HELPER.createBlock("paper_lantern_black", () -> new LanternBlock(Properties.getLanternPropsOfColor(MaterialColor.COLOR_BLACK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
-
+    public static final RegistryObject<Block> PAPER_LANTERN_BLACK_DOT = HELPER.createBlock("paper_lantern_black_dot", () -> new LanternBlock(Properties.getLanternPropsOfColor(MaterialColor.COLOR_RED)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PAPER_LANTERN_OBAKE = HELPER.createBlock("paper_lantern_obake", () -> new LanternBlock(Properties.getLanternPropsOfColor(MaterialColor.COLOR_ORANGE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PAPER_LANTERN_RED_DOT = HELPER.createBlock("paper_lantern_red_dot", () -> new LanternBlock(Properties.getLanternPropsOfColor(MaterialColor.COLOR_BLACK)), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> PAPER_LANTERN_SUN = HELPER.createBlock("paper_lantern_sun", () -> new LanternBlock(Properties.getLanternPropsOfColor(MaterialColor.SNOW)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 
 

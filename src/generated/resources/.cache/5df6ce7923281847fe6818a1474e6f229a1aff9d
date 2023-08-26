@@ -1,5 +1,7 @@
-// 1.19.2	2023-08-26T00:43:45.885628	Item Models: japanese_vibes
+// 1.19.2	2023-08-26T01:12:22.098916	Item Models: japanese_vibes
+cb66cc4b181b7a26de148204c051d3ad8815e5f5 assets/japanese_vibes/models/item/paper_lantern.json
 02af3ea487c6f4d71b2c7012618deaeb2207904b assets/japanese_vibes/models/item/paper_lantern_black.json
+9a2cf606320c7fafe76c23e369c49e5efff2fa50 assets/japanese_vibes/models/item/paper_lantern_black_dot.json
 6cdfd1c17903f4fc48f622e033591a42fe708d5f assets/japanese_vibes/models/item/paper_lantern_blue.json
 0385a3d830c47b779e79532b4aff5901a0778b55 assets/japanese_vibes/models/item/paper_lantern_brown.json
 b3af394f238e88c280d6d918b8f2a3a918d9a0a7 assets/japanese_vibes/models/item/paper_lantern_cyan.json
@@ -9,9 +11,12 @@ d013f1ba2684553276d2c5b79a06b6dfd9f9bf27 assets/japanese_vibes/models/item/paper
 bc6cbdc819fe58df09137c7bcbc9aaf4615138a7 assets/japanese_vibes/models/item/paper_lantern_light_gray.json
 38a729ef6ae153fd1bf845a92e9113ed959ae929 assets/japanese_vibes/models/item/paper_lantern_lime.json
 5932c2366f9a9e7c6a1c965b50fc9b7fff9b669a assets/japanese_vibes/models/item/paper_lantern_magenta.json
+fbb3e9426dc59651424d73e3aa7c816e044a8c73 assets/japanese_vibes/models/item/paper_lantern_obake.json
 e826f117661ce1898aa407a72679068bd225fb15 assets/japanese_vibes/models/item/paper_lantern_orange.json
 bb6214a04016e96c40f0a587ccfe62c0db39f1a0 assets/japanese_vibes/models/item/paper_lantern_pink.json
 731e0154586e9a5f5a59073f8222380236d8cfbf assets/japanese_vibes/models/item/paper_lantern_purple.json
 fd2fe48703be89fa84fe90246de967c1ecb17f8b assets/japanese_vibes/models/item/paper_lantern_red.json
+78c42adf374fbe725b938dbf6472b0a78bca0830 assets/japanese_vibes/models/item/paper_lantern_red_dot.json
+8acad8643fa48fea93d37270d9d96a7129616865 assets/japanese_vibes/models/item/paper_lantern_sun.json
 1f0f07c25fdb075f6466bb4565dd0a2c5eaad9d9 assets/japanese_vibes/models/item/paper_lantern_white.json
 864bc76d2e1110d0a673f1a40aaf731e6f672246 assets/japanese_vibes/models/item/paper_lantern_yellow.json

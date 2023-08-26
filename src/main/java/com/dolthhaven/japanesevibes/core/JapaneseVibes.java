@@ -2,6 +2,7 @@ package com.dolthhaven.japanesevibes.core;
 
 import com.dolthhaven.japanesevibes.core.data.client.JVBlockstatesProvider;
 import com.dolthhaven.japanesevibes.core.data.client.JVItemModels;
+import com.dolthhaven.japanesevibes.core.data.client.JVLang;
 import com.dolthhaven.japanesevibes.core.data.server.JVLoot;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
@@ -49,6 +50,7 @@ public class JapaneseVibes {
 
         gen.addProvider(client, new JVBlockstatesProvider(event));
         gen.addProvider(client, new JVItemModels(event));
+        gen.addProvider(client, new JVLang(event));
     }
 
     public static ResourceLocation rlOf(String namespace) {

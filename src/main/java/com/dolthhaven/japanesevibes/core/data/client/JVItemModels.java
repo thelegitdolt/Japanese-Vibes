@@ -13,7 +13,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Supplier;
 
-import static com.dolthhaven.japanesevibes.core.JVBlocks.*;
+import static com.dolthhaven.japanesevibes.core.registry.JVBlocks.*;
 
 public class JVItemModels extends ItemModelProvider {
     public JVItemModels(GatherDataEvent event) {
@@ -22,6 +22,8 @@ public class JVItemModels extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        this.generatedBlockSprite(PAPER_LANTERN);
+
         this.generatedBlockSprite(PAPER_LANTERN_WHITE);
         this.generatedBlockSprite(PAPER_LANTERN_BROWN);
         this.generatedBlockSprite(PAPER_LANTERN_GRAY);
@@ -38,6 +40,11 @@ public class JVItemModels extends ItemModelProvider {
         this.generatedBlockSprite(PAPER_LANTERN_MAGENTA);
         this.generatedBlockSprite(PAPER_LANTERN_PINK);
         this.generatedBlockSprite(PAPER_LANTERN_BLACK);
+
+        this.generatedBlockSprite(PAPER_LANTERN_BLACK_DOT);
+        this.generatedBlockSprite(PAPER_LANTERN_OBAKE);
+        this.generatedBlockSprite(PAPER_LANTERN_RED_DOT);
+        this.generatedBlockSprite(PAPER_LANTERN_SUN);
     }
 
     private void generated(RegistryObject<? extends ItemLike> item) {
