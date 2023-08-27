@@ -43,12 +43,36 @@ public class JVLang extends LanguageProvider {
         this.paperLantern(PAPER_LANTERN_OBAKE);
         this.paperLantern(PAPER_LANTERN_RED_DOT);
         this.paperLantern(PAPER_LANTERN_SUN);
+
+        this.simple(SMALL_LANTERN);
+        this.simple(WHITE_SMALL_LANTERN);
+        this.simple(BROWN_SMALL_LANTERN);
+        this.simple(GRAY_SMALL_LANTERN);
+        this.simple(LIGHT_GRAY_SMALL_LANTERN);
+        this.simple(RED_SMALL_LANTERN);
+        this.simple(ORANGE_SMALL_LANTERN);
+        this.simple(YELLOW_SMALL_LANTERN);
+        this.simple(LIME_SMALL_LANTERN);
+        this.simple(GREEN_SMALL_LANTERN);
+        this.simple(BLUE_SMALL_LANTERN);
+        this.simple(LIGHT_BLUE_SMALL_LANTERN);
+        this.simple(CYAN_SMALL_LANTERN);
+        this.simple(PURPLE_SMALL_LANTERN);
+        this.simple(MAGENTA_SMALL_LANTERN);
+        this.simple(PINK_SMALL_LANTERN);
+        this.simple(BLACK_SMALL_LANTERN);
     }
 
     private void paperLantern(RegistryObject<Block> lantern) {
         String path = StringUtils.capitaliseAllWords(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(lantern.get().asItem())).getPath().replace('_', ' ').substring(14));
 
         this.add(lantern.get(), path + " Paper Lantern");
+    }
+
+    private void simple(RegistryObject<Block> block) {
+        String name = StringUtils.capitaliseAllWords(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block.get().asItem())).getPath().replace('_', ' '));
+
+        this.add(block.get(), name);
     }
 
 

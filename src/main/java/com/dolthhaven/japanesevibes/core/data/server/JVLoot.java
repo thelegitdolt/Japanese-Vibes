@@ -76,6 +76,24 @@ public class JVLoot extends LootTableProvider {
             this.dropSelf(PAPER_LANTERN_OBAKE.get());
             this.dropSelf(PAPER_LANTERN_RED_DOT.get());
             this.dropSelf(PAPER_LANTERN_SUN.get());
+
+            this.dropSelf(SMALL_LANTERN.get());
+            this.dropSelf(WHITE_SMALL_LANTERN.get());
+            this.dropSelf(BROWN_SMALL_LANTERN.get());
+            this.dropSelf(GRAY_SMALL_LANTERN.get());
+            this.dropSelf(LIGHT_GRAY_SMALL_LANTERN.get());
+            this.dropSelf(RED_SMALL_LANTERN.get());
+            this.dropSelf(ORANGE_SMALL_LANTERN.get());
+            this.dropSelf(YELLOW_SMALL_LANTERN.get());
+            this.dropSelf(LIME_SMALL_LANTERN.get());
+            this.dropSelf(GREEN_SMALL_LANTERN.get());
+            this.dropSelf(BLUE_SMALL_LANTERN.get());
+            this.dropSelf(LIGHT_BLUE_SMALL_LANTERN.get());
+            this.dropSelf(CYAN_SMALL_LANTERN.get());
+            this.dropSelf(PURPLE_SMALL_LANTERN.get());
+            this.dropSelf(MAGENTA_SMALL_LANTERN.get());
+            this.dropSelf(PINK_SMALL_LANTERN.get());
+            this.dropSelf(BLACK_SMALL_LANTERN.get());
         }
 
         @Override

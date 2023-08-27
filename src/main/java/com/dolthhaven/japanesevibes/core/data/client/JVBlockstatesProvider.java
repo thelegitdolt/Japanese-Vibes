@@ -50,6 +50,24 @@ public class JVBlockstatesProvider extends BlockStateProvider {
         this.paperLanternSpecial(PAPER_LANTERN_RED_DOT, "red_dot");
         this.paperLanternSpecial(PAPER_LANTERN_SUN, "sun");
 
+        this.smallLantern(SMALL_LANTERN);
+        this.smallLantern(WHITE_SMALL_LANTERN);
+        this.smallLantern(BROWN_SMALL_LANTERN);
+        this.smallLantern(GRAY_SMALL_LANTERN);
+        this.smallLantern(LIGHT_GRAY_SMALL_LANTERN);
+        this.smallLantern(RED_SMALL_LANTERN);
+        this.smallLantern(ORANGE_SMALL_LANTERN);
+        this.smallLantern(YELLOW_SMALL_LANTERN);
+        this.smallLantern(LIME_SMALL_LANTERN);
+        this.smallLantern(GREEN_SMALL_LANTERN);
+        this.smallLantern(BLUE_SMALL_LANTERN);
+        this.smallLantern(LIGHT_BLUE_SMALL_LANTERN);
+        this.smallLantern(CYAN_SMALL_LANTERN);
+        this.smallLantern(PURPLE_SMALL_LANTERN);
+        this.smallLantern(MAGENTA_SMALL_LANTERN);
+        this.smallLantern(PINK_SMALL_LANTERN);
+        this.smallLantern(BLACK_SMALL_LANTERN);
+
     }
 
 
@@ -66,12 +84,24 @@ public class JVBlockstatesProvider extends BlockStateProvider {
                 .build());
     }
 
+
+    private void cross(RegistryObject<Block> block, Supplier<Block> textureBlock) {
+        ResourceLocation texture = this.blockTexture(textureBlock.get());
+
+        this.itemModels().withExistingParent(this.getName(block), "item/generated").texture("layer0", texture).renderType("translucent");
+    }
+
     private void paperLanternVanilla() {
         this.getVariantBuilder(PAPER_LANTERN.get())
                 .partialState().with(LanternBlock.HANGING, true).addModels(existingModel("block/paper_lantern"))
                 .partialState().with(LanternBlock.HANGING, false).addModels(existingModel("block/paper_lantern"));
     }
 
+    private void smallLantern(RegistryObject<? extends Block> block) {
+        this.simpleBlock(block.get(), this.models().cross(this.getName(block), this.blockTexture(block.get())).renderType("cutout"));
+
+        this.itemModel(block);
+    }
 
 
 

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "japanese_vibes:block/yellow_small_lantern"
+  }
+}

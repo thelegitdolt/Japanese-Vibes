@@ -1,6 +1,5 @@
 package com.dolthhaven.japanesevibes.common.blocks;
 
-import com.dolthhaven.japanesevibes.core.registry.JVBlocks;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
@@ -28,6 +27,10 @@ public class DirectionalLanternBlock extends UniqueLanternBlock {
 
     public DirectionalLanternBlock(Properties props) {
         super(props);
+    }
+
+    public DirectionalLanternBlock(Properties props, VoxelShape both) {
+        super(props, both);
     }
 
     @Override

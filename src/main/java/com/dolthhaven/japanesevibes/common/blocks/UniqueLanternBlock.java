@@ -19,6 +19,12 @@ public class UniqueLanternBlock extends LanternBlock {
         this.hanging = hanging;
     }
 
+    public UniqueLanternBlock(Properties props, VoxelShape both) {
+        super(props);
+        this.normal = both;
+        this.hanging = both;
+    }
+
     public UniqueLanternBlock(Properties props) {
         super(props);
         this.normal =  JVBlocks.Shapes.VANILLA_LANTERN_AABB;
