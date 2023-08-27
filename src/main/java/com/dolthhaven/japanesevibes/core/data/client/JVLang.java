@@ -1,6 +1,7 @@
 package com.dolthhaven.japanesevibes.core.data.client;
 
 import com.dolthhaven.japanesevibes.core.JapaneseVibes;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -11,6 +12,7 @@ import org.codehaus.plexus.util.StringUtils;
 import java.util.Objects;
 
 import static com.dolthhaven.japanesevibes.core.registry.JVBlocks.*;
+import static com.dolthhaven.japanesevibes.core.registry.JVItems.*;
 
 public class JVLang extends LanguageProvider {
 
@@ -44,23 +46,33 @@ public class JVLang extends LanguageProvider {
         this.paperLantern(PAPER_LANTERN_RED_DOT);
         this.paperLantern(PAPER_LANTERN_SUN);
 
-        this.simple(SMALL_LANTERN);
-        this.simple(WHITE_SMALL_LANTERN);
-        this.simple(BROWN_SMALL_LANTERN);
-        this.simple(GRAY_SMALL_LANTERN);
-        this.simple(LIGHT_GRAY_SMALL_LANTERN);
-        this.simple(RED_SMALL_LANTERN);
-        this.simple(ORANGE_SMALL_LANTERN);
-        this.simple(YELLOW_SMALL_LANTERN);
-        this.simple(LIME_SMALL_LANTERN);
-        this.simple(GREEN_SMALL_LANTERN);
-        this.simple(BLUE_SMALL_LANTERN);
-        this.simple(LIGHT_BLUE_SMALL_LANTERN);
-        this.simple(CYAN_SMALL_LANTERN);
-        this.simple(PURPLE_SMALL_LANTERN);
-        this.simple(MAGENTA_SMALL_LANTERN);
-        this.simple(PINK_SMALL_LANTERN);
-        this.simple(BLACK_SMALL_LANTERN);
+        this.simpleBlock(SMALL_LANTERN);
+        this.simpleBlock(WHITE_SMALL_LANTERN);
+        this.simpleBlock(BROWN_SMALL_LANTERN);
+        this.simpleBlock(GRAY_SMALL_LANTERN);
+        this.simpleBlock(LIGHT_GRAY_SMALL_LANTERN);
+        this.simpleBlock(RED_SMALL_LANTERN);
+        this.simpleBlock(ORANGE_SMALL_LANTERN);
+        this.simpleBlock(YELLOW_SMALL_LANTERN);
+        this.simpleBlock(LIME_SMALL_LANTERN);
+        this.simpleBlock(GREEN_SMALL_LANTERN);
+        this.simpleBlock(BLUE_SMALL_LANTERN);
+        this.simpleBlock(LIGHT_BLUE_SMALL_LANTERN);
+        this.simpleBlock(CYAN_SMALL_LANTERN);
+        this.simpleBlock(PURPLE_SMALL_LANTERN);
+        this.simpleBlock(MAGENTA_SMALL_LANTERN);
+        this.simpleBlock(PINK_SMALL_LANTERN);
+        this.simpleBlock(BLACK_SMALL_LANTERN);
+
+        this.simpleBlock(WOOD_BELL);
+
+        this.simpleBlock(JIZO_STONE);
+        this.simpleBlock(STONE_LAMP);
+        this.simpleBlock(TATAMI_LANTERN);
+
+        this.simpleItem(CARAMEL_APPLE);
+        this.simpleItem(SHAVED_ICE);
+        this.simpleItem(TAIYAKI);
     }
 
     private void paperLantern(RegistryObject<Block> lantern) {
@@ -69,10 +81,16 @@ public class JVLang extends LanguageProvider {
         this.add(lantern.get(), path + " Paper Lantern");
     }
 
-    private void simple(RegistryObject<Block> block) {
+    private void simpleBlock(RegistryObject<Block> block) {
         String name = StringUtils.capitaliseAllWords(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(block.get().asItem())).getPath().replace('_', ' '));
 
         this.add(block.get(), name);
+    }
+
+    private void simpleItem(RegistryObject<Item> item) {
+        String name = StringUtils.capitaliseAllWords(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(item.get())).getPath().replace('_', ' '));
+
+        this.add(item.get(), name);
     }
 
 

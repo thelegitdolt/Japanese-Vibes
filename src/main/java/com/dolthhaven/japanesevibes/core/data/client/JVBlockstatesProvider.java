@@ -50,24 +50,29 @@ public class JVBlockstatesProvider extends BlockStateProvider {
         this.paperLanternSpecial(PAPER_LANTERN_RED_DOT, "red_dot");
         this.paperLanternSpecial(PAPER_LANTERN_SUN, "sun");
 
-        this.smallLantern(SMALL_LANTERN);
-        this.smallLantern(WHITE_SMALL_LANTERN);
-        this.smallLantern(BROWN_SMALL_LANTERN);
-        this.smallLantern(GRAY_SMALL_LANTERN);
-        this.smallLantern(LIGHT_GRAY_SMALL_LANTERN);
-        this.smallLantern(RED_SMALL_LANTERN);
-        this.smallLantern(ORANGE_SMALL_LANTERN);
-        this.smallLantern(YELLOW_SMALL_LANTERN);
-        this.smallLantern(LIME_SMALL_LANTERN);
-        this.smallLantern(GREEN_SMALL_LANTERN);
-        this.smallLantern(BLUE_SMALL_LANTERN);
-        this.smallLantern(LIGHT_BLUE_SMALL_LANTERN);
-        this.smallLantern(CYAN_SMALL_LANTERN);
-        this.smallLantern(PURPLE_SMALL_LANTERN);
-        this.smallLantern(MAGENTA_SMALL_LANTERN);
-        this.smallLantern(PINK_SMALL_LANTERN);
-        this.smallLantern(BLACK_SMALL_LANTERN);
+        this.simpleCross(SMALL_LANTERN);
+        this.simpleCross(WHITE_SMALL_LANTERN);
+        this.simpleCross(BROWN_SMALL_LANTERN);
+        this.simpleCross(GRAY_SMALL_LANTERN);
+        this.simpleCross(LIGHT_GRAY_SMALL_LANTERN);
+        this.simpleCross(RED_SMALL_LANTERN);
+        this.simpleCross(ORANGE_SMALL_LANTERN);
+        this.simpleCross(YELLOW_SMALL_LANTERN);
+        this.simpleCross(LIME_SMALL_LANTERN);
+        this.simpleCross(GREEN_SMALL_LANTERN);
+        this.simpleCross(BLUE_SMALL_LANTERN);
+        this.simpleCross(LIGHT_BLUE_SMALL_LANTERN);
+        this.simpleCross(CYAN_SMALL_LANTERN);
+        this.simpleCross(PURPLE_SMALL_LANTERN);
+        this.simpleCross(MAGENTA_SMALL_LANTERN);
+        this.simpleCross(PINK_SMALL_LANTERN);
+        this.simpleCross(BLACK_SMALL_LANTERN);
 
+        this.simpleCross(WOOD_BELL);
+
+        this.existingModelWithDirection(JIZO_STONE);
+        this.existingModelItemSprite(TATAMI_LANTERN);
+        this.existingModelItemSprite(STONE_LAMP);
     }
 
 
@@ -84,11 +89,20 @@ public class JVBlockstatesProvider extends BlockStateProvider {
                 .build());
     }
 
+    private void existingModel(RegistryObject<Block> block) {
+        this.simpleBlock(block.get(), new ModelFile.ExistingModelFile(JapaneseVibes.rlOf("block/" + this.getName(block)), this.models().existingFileHelper));
+    }
 
-    private void cross(RegistryObject<Block> block, Supplier<Block> textureBlock) {
-        ResourceLocation texture = this.blockTexture(textureBlock.get());
+    private void existingModelWithDirection(RegistryObject<Block> block) {
+        this.getVariantBuilder(block.get()).forAllStates(state -> ConfiguredModel.builder()
+                .modelFile(new ModelFile.ExistingModelFile(JapaneseVibes.rlOf("block/" + this.getName(block)), this.models().existingFileHelper))
+                .rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
+                .build());
+    }
 
-        this.itemModels().withExistingParent(this.getName(block), "item/generated").texture("layer0", texture).renderType("translucent");
+    private void existingModelItemSprite(RegistryObject<Block> block) {
+        this.existingModel(block);
+        this.itemModel(block);
     }
 
     private void paperLanternVanilla() {
@@ -97,10 +111,8 @@ public class JVBlockstatesProvider extends BlockStateProvider {
                 .partialState().with(LanternBlock.HANGING, false).addModels(existingModel("block/paper_lantern"));
     }
 
-    private void smallLantern(RegistryObject<? extends Block> block) {
+    private void simpleCross(RegistryObject<? extends Block> block) {
         this.simpleBlock(block.get(), this.models().cross(this.getName(block), this.blockTexture(block.get())).renderType("cutout"));
-
-        this.itemModel(block);
     }
 
 

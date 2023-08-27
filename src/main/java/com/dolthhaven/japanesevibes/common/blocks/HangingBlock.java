@@ -25,7 +25,6 @@ import javax.annotation.Nullable;
 public class HangingBlock extends Block implements SimpleWaterloggedBlock {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
-
     private final VoxelShape shape;
 
     public HangingBlock(Properties props, VoxelShape shape) {

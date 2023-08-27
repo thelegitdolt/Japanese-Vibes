@@ -94,6 +94,12 @@ public class JVLoot extends LootTableProvider {
             this.dropSelf(MAGENTA_SMALL_LANTERN.get());
             this.dropSelf(PINK_SMALL_LANTERN.get());
             this.dropSelf(BLACK_SMALL_LANTERN.get());
+
+            this.dropSelf(TATAMI_LANTERN.get());
+            this.dropSelf(JIZO_STONE.get());
+            this.dropSelf(STONE_LAMP.get());
+
+            this.dropSelf(WOOD_BELL.get());
         }
 
         @Override

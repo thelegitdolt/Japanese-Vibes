@@ -5,6 +5,7 @@
   "block.japanese_vibes.cyan_small_lantern": "Cyan Small Lantern",
   "block.japanese_vibes.gray_small_lantern": "Gray Small Lantern",
   "block.japanese_vibes.green_small_lantern": "Green Small Lantern",
+  "block.japanese_vibes.jizo_stone": "Jizo Stone",
   "block.japanese_vibes.light_blue_small_lantern": "Light Blue Small Lantern",
   "block.japanese_vibes.light_gray_small_lantern": "Light Gray Small Lantern",
   "block.japanese_vibes.lime_small_lantern": "Lime Small Lantern",
@@ -35,6 +36,12 @@
   "block.japanese_vibes.purple_small_lantern": "Purple Small Lantern",
   "block.japanese_vibes.red_small_lantern": "Red Small Lantern",
   "block.japanese_vibes.small_lantern": "Small Lantern",
+  "block.japanese_vibes.stone_lamp": "Stone Lamp",
+  "block.japanese_vibes.tatami_lantern": "Tatami Lantern",
   "block.japanese_vibes.white_small_lantern": "White Small Lantern",
-  "block.japanese_vibes.yellow_small_lantern": "Yellow Small Lantern"
+  "block.japanese_vibes.wood_bell": "Wood Bell",
+  "block.japanese_vibes.yellow_small_lantern": "Yellow Small Lantern",
+  "item.japanese_vibes.caramel_apple": "Caramel Apple",
+  "item.japanese_vibes.shaved_ice": "Shaved Ice",
+  "item.japanese_vibes.taiyaki": "Taiyaki"
 }

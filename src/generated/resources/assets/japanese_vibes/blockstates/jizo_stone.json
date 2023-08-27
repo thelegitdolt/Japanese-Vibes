@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "japanese_vibes:block/jizo_stone",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "japanese_vibes:block/jizo_stone"
+    },
+    "facing=south": {
+      "model": "japanese_vibes:block/jizo_stone",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "japanese_vibes:block/jizo_stone",
+      "y": 270
+    }
+  }
+}

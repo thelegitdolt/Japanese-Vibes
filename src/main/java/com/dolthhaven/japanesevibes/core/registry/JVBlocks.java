@@ -1,13 +1,12 @@
 package com.dolthhaven.japanesevibes.core.registry;
 
 
-import com.dolthhaven.japanesevibes.common.blocks.DirectionalLanternBlock;
-import com.dolthhaven.japanesevibes.common.blocks.HangingBlock;
-import com.dolthhaven.japanesevibes.common.blocks.UniqueLanternBlock;
+import com.dolthhaven.japanesevibes.common.blocks.*;
 import com.dolthhaven.japanesevibes.core.JapaneseVibes;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -62,6 +61,14 @@ public class JVBlocks {
     public static final RegistryObject<Block> BLACK_SMALL_LANTERN = HELPER.createBlock("black_small_lantern", () -> new HangingBlock(Properties.getLanternPropsOfColor(MaterialColor.COLOR_BLACK), Shapes.SMALL_LANTERN_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 
+    public static final RegistryObject<Block> TATAMI_LANTERN = HELPER.createBlock("tatami_lantern", () -> new UniqueLanternBlock(Properties.TATAMI_LANTERN, Shapes.TATAMI_LANTERN_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> STONE_LAMP = HELPER.createBlock("stone_lamp", () -> new UniqueBlock(Properties.STONE_LAMP, Shapes.STONE_LAMP_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> JIZO_STONE = HELPER.createBlock("jizo_stone", () -> new HorizontalDirectionalUniqueBlock(BlockBehaviour.Properties.copy(Blocks.STONE), Shapes.JIZO_STONE_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+    public static final RegistryObject<Block> WOOD_BELL = HELPER.createBlock("wood_bell", () -> new ChimeBlock(Properties.getLanternPropsOfColor(MaterialColor.COLOR_BLACK), Shapes.SMALL_LANTERN_AABB, null), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+
+
 
 
 
@@ -69,6 +76,9 @@ public class JVBlocks {
         public static BlockBehaviour.Properties getLanternPropsOfColor(MaterialColor color) {
             return Block.Properties.of(Material.WOOL, color).strength(1f).sound(SoundType.WOOL).lightLevel(state -> 12);
         }
+
+        public static final BlockBehaviour.Properties TATAMI_LANTERN =  Block.Properties.of(Material.WOOL, MaterialColor.TERRACOTTA_WHITE).strength(1.2f).sound(SoundType.WOOL).lightLevel(state -> 15);
+        public static final BlockBehaviour.Properties STONE_LAMP = Block.Properties.of(Material.STONE, MaterialColor.STONE).strength(1.5f, 6.0f).sound(SoundType.STONE).lightLevel(state -> 15).requiresCorrectToolForDrops();
     }
 
     public static class Shapes {
@@ -77,5 +87,10 @@ public class JVBlocks {
 
         public static final VoxelShape PAPER_LANTERN_AABB = Block.box(1, 1, 1, 15, 15, 15);
         public static final VoxelShape SMALL_LANTERN_AABB = Block.box(3, 2, 3, 13, 16, 13);
+
+
+        public static final VoxelShape TATAMI_LANTERN_AABB = Block.box(3, 2, 3, 13, 16, 13);
+        public static final VoxelShape STONE_LAMP_AABB = Block.box(3, 2, 3, 13, 16, 13);
+        public static final VoxelShape JIZO_STONE_AABB = Block.box(3, 2, 3, 13, 16, 13);
     }
 }

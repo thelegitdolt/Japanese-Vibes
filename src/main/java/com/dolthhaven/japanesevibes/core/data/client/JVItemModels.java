@@ -1,13 +1,10 @@
 package com.dolthhaven.japanesevibes.core.data.client;
 
 import com.dolthhaven.japanesevibes.core.JapaneseVibes;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -15,6 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 import static com.dolthhaven.japanesevibes.core.registry.JVBlocks.*;
+import static com.dolthhaven.japanesevibes.core.registry.JVItems.*;
 
 public class JVItemModels extends ItemModelProvider {
     public JVItemModels(GatherDataEvent event) {
@@ -64,6 +62,13 @@ public class JVItemModels extends ItemModelProvider {
         this.generatedCross(MAGENTA_SMALL_LANTERN);
         this.generatedCross(PINK_SMALL_LANTERN);
         this.generatedCross(BLACK_SMALL_LANTERN);
+
+        this.generatedCross(WOOD_BELL);
+
+        this.generated(CARAMEL_APPLE);
+        this.generated(TAIYAKI);
+        this.generated(SHAVED_ICE);
+
     }
 
     // Uses item/generated with texture in jv:item/item_name
