@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "japanese_vibes:item/tatami_lantern"
+    "layer0": "japanese_vibes:item/jizo_stone"
   }
 }

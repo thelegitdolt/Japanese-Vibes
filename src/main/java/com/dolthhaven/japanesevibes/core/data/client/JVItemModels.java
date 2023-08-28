@@ -65,6 +65,10 @@ public class JVItemModels extends ItemModelProvider {
 
         this.generatedCross(WOOD_BELL);
 
+        this.generated(JIZO_STONE);
+        this.generated(STONE_LAMP);
+        this.generated(TATAMI_LANTERN);
+
         this.generated(CARAMEL_APPLE);
         this.generated(TAIYAKI);
         this.generated(SHAVED_ICE);

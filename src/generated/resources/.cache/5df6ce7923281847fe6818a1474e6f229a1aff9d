@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-28T05:52:31.814575	Item Models: japanese_vibes
+// 1.19.2	2023-08-28T07:58:47.339428	Item Models: japanese_vibes
 a53bb440afb8610ff2cacb104b074af70d7a5427 assets/japanese_vibes/models/item/black_small_lantern.json
 8ade851f8ab20b9a03f2477e430a82d35ce87adb assets/japanese_vibes/models/item/blue_small_lantern.json
 e73c18fc774fbd5e2c433985647bc859a4bdc88b assets/japanese_vibes/models/item/brown_small_lantern.json
@@ -6,6 +6,7 @@ b02f8d718042d2b0ce8c0810e5a81caddbd72613 assets/japanese_vibes/models/item/caram
 793fe5bbc692036dd943769ea64e8066cd2c8413 assets/japanese_vibes/models/item/cyan_small_lantern.json
 2d70588929c3e89ed69fb8f65e01027a326ca790 assets/japanese_vibes/models/item/gray_small_lantern.json
 ebade81b8904b1aa6f5da9f5fbed5498e4cb3092 assets/japanese_vibes/models/item/green_small_lantern.json
+9b949f0b7663ea47819e0dc7280d2a9e06779169 assets/japanese_vibes/models/item/jizo_stone.json
 b8e135d6309f5d65ff43060ec0ba2b87fbbadd45 assets/japanese_vibes/models/item/light_blue_small_lantern.json
 0f005fdce17194a42a6792477b48d619a9239812 assets/japanese_vibes/models/item/light_gray_small_lantern.json
 9da1f04d3e8b49b33ad08684553992627bbd8ddb assets/japanese_vibes/models/item/lime_small_lantern.json
@@ -37,7 +38,9 @@ a1f596a009bae50879a0e5704792908862472bad assets/japanese_vibes/models/item/pink_
 6541ef0817a017902daa8a362bc480297c5b3714 assets/japanese_vibes/models/item/red_small_lantern.json
 3d78932503bb94f6efb7f3ff61a662c66403b215 assets/japanese_vibes/models/item/shaved_ice.json
 9b76d2139fb3cba19862d156de69f5027c063df2 assets/japanese_vibes/models/item/small_lantern.json
+de5be03916de18373ccefb454e85d4d1fcf6f0ef assets/japanese_vibes/models/item/stone_lamp.json
 9e7aed091c6c96957ec0513d4cc5c5995ae7dbe9 assets/japanese_vibes/models/item/taiyaki.json
+a984e7e148d45a39853ee8884df0c4da357c32d2 assets/japanese_vibes/models/item/tatami_lantern.json
 c16b81ffe1bfc223416e71df5fa7809dacafcdb7 assets/japanese_vibes/models/item/white_small_lantern.json
 09b1ec9feaf9c318fdc6dd2d34d5faa9b45cc9a1 assets/japanese_vibes/models/item/wood_bell.json
 914804cad0772cdef3edb15978f72515e20d332a assets/japanese_vibes/models/item/yellow_small_lantern.json

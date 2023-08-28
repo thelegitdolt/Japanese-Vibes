@@ -71,8 +71,8 @@ public class JVBlockstatesProvider extends BlockStateProvider {
         this.simpleCross(WOOD_BELL);
 
         this.existingModelWithDirection(JIZO_STONE);
-        this.existingModelItemSprite(TATAMI_LANTERN);
-        this.existingModelItemSprite(STONE_LAMP);
+        this.existingModel(TATAMI_LANTERN);
+        this.existingModel(STONE_LAMP);
     }
 
 

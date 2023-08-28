@@ -27,8 +27,8 @@ public class UniqueLanternBlock extends LanternBlock {
 
     public UniqueLanternBlock(Properties props) {
         super(props);
-        this.normal =  JVBlocks.Shapes.VANILLA_LANTERN_AABB;
-        this.hanging = JVBlocks.Shapes.HANGING_VANILLA_LANTERN_AABB;
+        this.normal =  JVBlocks.Hitboxes.VANILLA_LANTERN_AABB;
+        this.hanging = JVBlocks.Hitboxes.HANGING_VANILLA_LANTERN_AABB;
     }
 
     @Override

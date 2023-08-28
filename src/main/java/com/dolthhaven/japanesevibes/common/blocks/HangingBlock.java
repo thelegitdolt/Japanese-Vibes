@@ -85,4 +85,6 @@ public class HangingBlock extends Block implements SimpleWaterloggedBlock {
     public @NotNull VoxelShape getShape(@NotNull BlockState state, @NotNull BlockGetter getter, @NotNull BlockPos pos, @NotNull CollisionContext context) {
         return shape;
     }
+
+
 }

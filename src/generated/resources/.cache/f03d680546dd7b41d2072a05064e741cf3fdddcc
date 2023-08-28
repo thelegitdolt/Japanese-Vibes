@@ -1,4 +1,4 @@
-// 1.19.2	2023-08-28T06:16:54.53376	Block States: japanese_vibes
+// 1.19.2	2023-08-28T07:58:47.344196	Block States: japanese_vibes
 383f2260cf232afeb0054bde1e80ac403e6a96c0 assets/japanese_vibes/blockstates/black_small_lantern.json
 733f66664aefd2c51958f71c15569084b5ec2c64 assets/japanese_vibes/blockstates/blue_small_lantern.json
 f07a264ba602b8ccb550c8486d1d9c6c13072e23 assets/japanese_vibes/blockstates/brown_small_lantern.json
@@ -59,5 +59,3 @@ affa9a763066f5f08ab3b07757deb1dd1b2b735b assets/japanese_vibes/models/block/pink
 d68cda1019d9889b544626ca13439f1a73c4efc3 assets/japanese_vibes/models/block/white_small_lantern.json
 3d70698331329c60e07ec5635d0b3af56f618405 assets/japanese_vibes/models/block/wood_bell.json
 182feb6d41e223f62fcbe474bb072c60390c180e assets/japanese_vibes/models/block/yellow_small_lantern.json
-2c5899c46451d6e731eca690bcb9a21cb83efbcf assets/japanese_vibes/models/item/stone_lamp.json
-6823913b7be4427c13cf10dc41550f9789c38b41 assets/japanese_vibes/models/item/tatami_lantern.json

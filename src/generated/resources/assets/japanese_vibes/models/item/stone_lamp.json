@@ -1,3 +1,6 @@
 {
-  "parent": "japanese_vibes:block/stone_lamp"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "japanese_vibes:item/stone_lamp"
+  }
 }
