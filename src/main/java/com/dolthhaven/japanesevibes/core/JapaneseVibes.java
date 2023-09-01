@@ -5,8 +5,11 @@ import com.dolthhaven.japanesevibes.core.data.client.JVBlockstatesProvider;
 import com.dolthhaven.japanesevibes.core.data.client.JVItemModels;
 import com.dolthhaven.japanesevibes.core.data.client.JVLang;
 import com.dolthhaven.japanesevibes.core.data.server.JVLoot;
-import com.dolthhaven.japanesevibes.core.data.server.JVTags;
+import com.dolthhaven.japanesevibes.core.data.server.JVRecipes;
+import com.dolthhaven.japanesevibes.core.data.server.tags.JVNewTags;
+import com.dolthhaven.japanesevibes.core.data.server.tags.JVTags;
 import com.dolthhaven.japanesevibes.core.data.server.modifiers.JVAdvancementModifiers;
+import com.dolthhaven.japanesevibes.core.other.JVIntegration;
 import com.dolthhaven.japanesevibes.core.registry.JVParticles;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
@@ -44,6 +47,7 @@ public class JapaneseVibes {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        JVIntegration.register();
     }
 
     @SubscribeEvent
@@ -55,9 +59,15 @@ public class JapaneseVibes {
         boolean client = event.includeClient();
         boolean server = event.includeServer();
 
+        JVTags.JVBlockTags tags = new JVTags.JVBlockTags(event);
+
         gen.addProvider(server, new JVLoot(event));
-        gen.addProvider(server, new JVTags.Blocks(event));
+        gen.addProvider(server, new JVTags.JVBlockTags(event));
         gen.addProvider(server, new JVAdvancementModifiers(event));
+        gen.addProvider(server, tags);
+        gen.addProvider(server, new JVTags.JVItemTags(event, tags));
+        gen.addProvider(server, new JVRecipes(event));
+
 
         gen.addProvider(client, new JVBlockstatesProvider(event));
         gen.addProvider(client, new JVItemModels(event));

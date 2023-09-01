@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    [
+      {
+        "item": "japanese_vibes:white_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:orange_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:magenta_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:light_blue_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:yellow_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:lime_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:pink_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:gray_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:light_gray_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:small_lantern"
+      },
+      {
+        "item": "japanese_vibes:purple_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:blue_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:brown_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:green_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:red_small_lantern"
+      },
+      {
+        "item": "japanese_vibes:black_small_lantern"
+      }
+    ],
+    {
+      "item": "minecraft:cyan_dye"
+    }
+  ],
+  "result": {
+    "item": "japanese_vibes:cyan_small_lantern"
+  }
+}

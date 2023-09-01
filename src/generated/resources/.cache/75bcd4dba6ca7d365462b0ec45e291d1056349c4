@@ -1,4 +1,7 @@
-// 1.19.2	2023-09-01T10:46:57.131879	Tags for minecraft:block
+// 1.19.2	2023-09-02T10:06:12.05425	Tags for minecraft:block
+35c214041de9a8479abc4617419d3eb2976ba867 data/japanese_vibes/tags/blocks/paper_lanterns.json
+187dc2aa7ca65d3d49bbbe7601e2cf12f638af97 data/japanese_vibes/tags/blocks/paper_lanterns_colored_only.json
+dff91cae9455534b068cb797ce64481db2ff466f data/japanese_vibes/tags/blocks/small_lanterns.json
 cfbb61032161f3ec8432bf0b690e35e1420849b0 data/minecraft/tags/blocks/mineable/axe.json
 53e4e6b1c1c6a4efa4f0fa8bb595bb4b8908df46 data/minecraft/tags/blocks/mineable/pickaxe.json
 3ede57e769d2f5c0690d04a0201f67e4f2e02c9e data/minecraft/tags/blocks/replaceable_plants.json

@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    [
+      {
+        "item": "japanese_vibes:paper_lantern_white"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_magenta"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_light_blue"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_yellow"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_lime"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_pink"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_gray"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_light_gray"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_cyan"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_purple"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_blue"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_brown"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_green"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_red"
+      },
+      {
+        "item": "japanese_vibes:paper_lantern_black"
+      }
+    ],
+    {
+      "item": "minecraft:orange_dye"
+    }
+  ],
+  "result": {
+    "item": "japanese_vibes:paper_lantern_orange"
+  }
+}

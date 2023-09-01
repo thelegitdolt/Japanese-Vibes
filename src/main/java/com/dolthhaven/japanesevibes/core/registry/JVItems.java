@@ -6,13 +6,13 @@ import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 @Mod.EventBusSubscriber(modid = JapaneseVibes.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class JVItems {
     public static final ItemSubRegistryHelper HELPER = JapaneseVibes.REGISTRY_HELPER.getItemSubHelper();
-
     public static final RegistryObject<Item> CARAMEL_APPLE = HELPER.createItem("caramel_apple", () -> new Item(new Item.Properties().food(Food.CARAMEL_APPLE).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> TAIYAKI = HELPER.createItem("taiyaki", () -> new Item(new Item.Properties().food(Food.TAIYAKI).tab(CreativeModeTab.TAB_FOOD)));
     public static final RegistryObject<Item> SHAVED_ICE = HELPER.createItem("shaved_ice", () -> new ShavedIceItem(new Item.Properties().food(Food.SHAVED_ICE).stacksTo(1).tab(CreativeModeTab.TAB_FOOD)));

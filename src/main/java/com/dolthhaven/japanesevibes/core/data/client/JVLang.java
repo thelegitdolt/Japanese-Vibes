@@ -75,6 +75,10 @@ public class JVLang extends LanguageProvider {
         this.simpleItem(CARAMEL_APPLE);
         this.simpleItem(SHAVED_ICE);
         this.simpleItem(TAIYAKI);
+
+        this.simpleBlock(CAMELLIA_BUSH);
+        this.simpleBlock(PINK_HYDRANGEA);
+        this.simpleBlock(BLUE_HYDRANGEA);
     }
 
     private void paperLantern(RegistryObject<Block> lantern) {

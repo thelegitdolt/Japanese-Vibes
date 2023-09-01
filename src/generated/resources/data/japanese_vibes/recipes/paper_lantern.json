@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "minecraft:paper"
+    },
+    "A": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "minecraft:torch"
+    }
+  },
+  "pattern": [
+    " A ",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "item": "japanese_vibes:paper_lantern"
+  }
+}

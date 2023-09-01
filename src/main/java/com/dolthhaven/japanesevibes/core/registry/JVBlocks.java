@@ -67,7 +67,7 @@ public class JVBlocks {
     public static final RegistryObject<Block> BLACK_SMALL_LANTERN = HELPER.createBlock("black_small_lantern", () -> new HangingBlock(Properties.getLanternPropsOfColor(MaterialColor.COLOR_BLACK), Hitboxes.SMALL_LANTERN_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
 
-    public static final RegistryObject<Block> TATAMI_LANTERN = HELPER.createBlock("tatami_lantern", () -> new UniqueLanternBlock(Properties.TATAMI_LANTERN, Hitboxes.TATAMI_LANTERN_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> TATAMI_LANTERN = HELPER.createBlock("tatami_lantern", () -> new UnfloatableBlock(Properties.TATAMI_LANTERN, Hitboxes.TATAMI_LANTERN_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> STONE_LAMP = HELPER.createBlock("stone_lamp", () -> new UniqueBlock(Properties.STONE_LAMP, Hitboxes.STONE_LAMP_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> JIZO_STONE = HELPER.createBlock("jizo_stone", () -> new JizoBlock(BlockBehaviour.Properties.copy(Blocks.STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
@@ -108,9 +108,11 @@ public class JVBlocks {
                 Block.box(4, 0, 4, 12, 5, 12), BooleanOp.OR
         );
 
-        public static final VoxelShape TATAMI_LANTERN_AABB = Block.box(3, 2, 3, 13, 16, 13);
+        public static final VoxelShape TATAMI_LANTERN_AABB = Shapes.joinUnoptimized(
+                Block.box(3, 12, 3, 13, 13, 13),
+                Block.box(4, 0, 4, 12, 12, 12), BooleanOp.OR);
 
-        private static VoxelShape joinAll(VoxelShape... shapes) {
+        public static VoxelShape joinAll(VoxelShape... shapes) {
             return joinAllHelper(shapes, 0);
         }
 
