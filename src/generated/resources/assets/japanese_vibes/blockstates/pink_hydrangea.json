@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "japanese_vibes:block/pink_hydrangea_bottom"
+    },
+    "half=upper": {
+      "model": "japanese_vibes:block/pink_hydrangea_top"
+    }
+  }
+}

@@ -1,10 +1,13 @@
 package com.dolthhaven.japanesevibes.core;
 
+import com.dolthhaven.japanesevibes.common.world.JVGeneration;
 import com.dolthhaven.japanesevibes.core.data.client.JVBlockstatesProvider;
 import com.dolthhaven.japanesevibes.core.data.client.JVItemModels;
 import com.dolthhaven.japanesevibes.core.data.client.JVLang;
 import com.dolthhaven.japanesevibes.core.data.server.JVLoot;
 import com.dolthhaven.japanesevibes.core.data.server.JVTags;
+import com.dolthhaven.japanesevibes.core.data.server.modifiers.JVAdvancementModifiers;
+import com.dolthhaven.japanesevibes.core.registry.JVParticles;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.data.DataGenerator;
@@ -29,6 +32,11 @@ public class JapaneseVibes {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         REGISTRY_HELPER.register(bus);
+
+        JVParticles.PARTICLES.register(bus);
+        JVGeneration.JVFeatures.CONFIGURED_FEATURES.register(bus);
+        JVGeneration.JVPlacedFeatures.PLACED_FEATURES.register(bus);
+
         bus.addListener(this::commonSetup);
         bus.addListener(this::dataSetup);
 
@@ -49,6 +57,7 @@ public class JapaneseVibes {
 
         gen.addProvider(server, new JVLoot(event));
         gen.addProvider(server, new JVTags.Blocks(event));
+        gen.addProvider(server, new JVAdvancementModifiers(event));
 
         gen.addProvider(client, new JVBlockstatesProvider(event));
         gen.addProvider(client, new JVItemModels(event));

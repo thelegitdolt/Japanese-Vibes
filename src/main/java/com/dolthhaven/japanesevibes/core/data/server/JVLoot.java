@@ -8,6 +8,8 @@ import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoublePlantBlock;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
@@ -100,6 +102,12 @@ public class JVLoot extends LootTableProvider {
             this.dropSelf(STONE_LAMP.get());
 
             this.dropSelf(WOOD_BELL.get());
+            this.dropSelf(GLASS_BELL.get());
+            this.dropSelf(COPPER_BELL.get());
+
+            this.add(PINK_HYDRANGEA.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
+            this.add(BLUE_HYDRANGEA.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
+            this.add(CAMELLIA_BUSH.get(), (block) -> createSinglePropConditionTable(block, DoublePlantBlock.HALF, DoubleBlockHalf.LOWER));
         }
 
         @Override

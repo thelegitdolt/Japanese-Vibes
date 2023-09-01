@@ -3,6 +3,8 @@ package com.dolthhaven.japanesevibes.core.registry;
 
 import com.dolthhaven.japanesevibes.common.blocks.*;
 import com.dolthhaven.japanesevibes.core.JapaneseVibes;
+import com.teamabnormals.blueprint.common.block.BlueprintTallFlowerBlock;
+import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.level.block.Block;
@@ -18,7 +20,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.BiFunction;
-import java.util.function.Function;
 
 @Mod.EventBusSubscriber(modid = JapaneseVibes.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class JVBlocks {
@@ -70,7 +71,15 @@ public class JVBlocks {
     public static final RegistryObject<Block> STONE_LAMP = HELPER.createBlock("stone_lamp", () -> new UniqueBlock(Properties.STONE_LAMP, Hitboxes.STONE_LAMP_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> JIZO_STONE = HELPER.createBlock("jizo_stone", () -> new JizoBlock(BlockBehaviour.Properties.copy(Blocks.STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> WOOD_BELL = HELPER.createBlock("wood_bell", () -> new ChimeBlock(Properties.getLanternPropsOfColor(MaterialColor.COLOR_BLACK), Hitboxes.SMALL_LANTERN_AABB, null), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> WOOD_BELL = HELPER.createBlock("wood_bell", () -> new ChimeBlock(BlockBehaviour.Properties.copy(Blocks.JUKEBOX), Hitboxes.SMALL_LANTERN_AABB, null), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> GLASS_BELL = HELPER.createBlock("glass_bell", () -> new ChimeBlock(BlockBehaviour.Properties.copy(Blocks.GLASS), Hitboxes.SMALL_LANTERN_AABB, null), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> COPPER_BELL = HELPER.createBlock("copper_bell", () -> new ChimeBlock(BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK), Hitboxes.SMALL_LANTERN_AABB, null), CreativeModeTab.TAB_BUILDING_BLOCKS);
+
+    public static final RegistryObject<Block> CAMELLIA_BUSH = HELPER.createBlock("camellia_bush", () -> new BlueprintTallFlowerBlock(PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> BLUE_HYDRANGEA = HELPER.createBlock("blue_hydrangea", () -> new BlueprintTallFlowerBlock(PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+    public static final RegistryObject<Block> PINK_HYDRANGEA = HELPER.createBlock("pink_hydrangea", () -> new BlueprintTallFlowerBlock(PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
+
+
 
 
 
@@ -112,6 +121,7 @@ public class JVBlocks {
                 else
                     return Shapes.joinUnoptimized(v, v2, BooleanOp.OR);
             };
+
             if (i - 1 >= list.length) {
                 return null;
             }

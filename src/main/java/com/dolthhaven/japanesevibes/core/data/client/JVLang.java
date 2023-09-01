@@ -65,6 +65,8 @@ public class JVLang extends LanguageProvider {
         this.simpleBlock(BLACK_SMALL_LANTERN);
 
         this.simpleBlock(WOOD_BELL);
+        this.simpleBlock(GLASS_BELL);
+        this.simpleBlock(COPPER_BELL);
 
         this.simpleBlock(JIZO_STONE);
         this.simpleBlock(STONE_LAMP);

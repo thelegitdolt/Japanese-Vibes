@@ -1,0 +1,55 @@
+{
+  "modifiers": [
+    {
+      "type": "criteria",
+      "config": {
+        "criteria": {
+          "japanese_vibes:caramel_apple": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "japanese_vibes:caramel_apple"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "japanese_vibes:shaved_ice": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "japanese_vibes:shaved_ice"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          },
+          "japanese_vibes:taiyaki": {
+            "conditions": {
+              "item": {
+                "items": [
+                  "japanese_vibes:taiyaki"
+                ]
+              }
+            },
+            "trigger": "minecraft:consume_item"
+          }
+        },
+        "requirements": [
+          [
+            "japanese_vibes:caramel_apple"
+          ],
+          [
+            "japanese_vibes:taiyaki"
+          ],
+          [
+            "japanese_vibes:shaved_ice"
+          ]
+        ],
+        "should_replace_requirements": false
+      }
+    }
+  ],
+  "priority": "normal",
+  "selector": "minecraft:husbandry/balanced_diet"
+}

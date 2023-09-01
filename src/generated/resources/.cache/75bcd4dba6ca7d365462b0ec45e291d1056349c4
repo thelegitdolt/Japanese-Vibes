@@ -1,2 +1,5 @@
-// 1.19.2	2023-08-28T05:52:31.81968	Tags for minecraft:block
-8c6bb3918362f8b795424f03dcb00577096aa6b8 data/minecraft/tags/blocks/mineable/pickaxe.json
+// 1.19.2	2023-09-01T10:46:57.131879	Tags for minecraft:block
+cfbb61032161f3ec8432bf0b690e35e1420849b0 data/minecraft/tags/blocks/mineable/axe.json
+53e4e6b1c1c6a4efa4f0fa8bb595bb4b8908df46 data/minecraft/tags/blocks/mineable/pickaxe.json
+3ede57e769d2f5c0690d04a0201f67e4f2e02c9e data/minecraft/tags/blocks/replaceable_plants.json
+3ede57e769d2f5c0690d04a0201f67e4f2e02c9e data/minecraft/tags/blocks/tall_flowers.json

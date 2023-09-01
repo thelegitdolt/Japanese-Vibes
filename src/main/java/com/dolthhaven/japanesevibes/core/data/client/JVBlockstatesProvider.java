@@ -5,8 +5,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoublePlantBlock;
 import net.minecraft.world.level.block.LanternBlock;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -14,6 +16,7 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 import static com.dolthhaven.japanesevibes.core.registry.JVBlocks.*;
@@ -69,10 +72,16 @@ public class JVBlockstatesProvider extends BlockStateProvider {
         this.simpleCross(BLACK_SMALL_LANTERN);
 
         this.simpleCross(WOOD_BELL);
+        this.simpleCross(GLASS_BELL);
+        this.simpleCross(COPPER_BELL);
 
         this.existingModelWithDirection(JIZO_STONE);
         this.existingModel(TATAMI_LANTERN);
         this.existingModel(STONE_LAMP);
+
+        this.tallPlant(CAMELLIA_BUSH);
+        this.tallPlant(PINK_HYDRANGEA);
+        this.tallPlant(BLUE_HYDRANGEA);
     }
 
 
@@ -135,6 +144,16 @@ public class JVBlockstatesProvider extends BlockStateProvider {
 
     private String getName(Supplier<? extends ItemLike> object) {
         return ForgeRegistries.ITEMS.getKey(object.get().asItem()).getPath();
+    }
+
+    private void tallPlant(RegistryObject<Block> flower) {
+        String name = getName(flower);
+        Function<String, ModelFile> model = s -> this.models().cross(name + "_" + s, this.modLoc("block/" + name + "_" + s)).renderType("cutout");
+
+        this.itemModels().withExistingParent(name, "item/generated").texture("layer0", this.modLoc("block/" + name + "_top"));
+        this.getVariantBuilder(flower.get())
+                .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER).addModels(new ConfiguredModel(model.apply("top")))
+                .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER).addModels(new ConfiguredModel(model.apply("bottom")));
     }
 
     private ConfiguredModel existingModel(String nameSpace) {

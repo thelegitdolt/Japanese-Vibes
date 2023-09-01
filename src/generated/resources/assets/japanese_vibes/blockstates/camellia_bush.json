@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "japanese_vibes:block/camellia_bush_bottom"
+    },
+    "half=upper": {
+      "model": "japanese_vibes:block/camellia_bush_top"
+    }
+  }
+}

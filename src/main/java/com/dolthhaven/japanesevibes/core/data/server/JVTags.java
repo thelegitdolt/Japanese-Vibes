@@ -15,7 +15,11 @@ public class JVTags {
 
         @Override
         public void addTags() {
-            this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(JIZO_STONE.get(), STONE_LAMP.get());
+            this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(JIZO_STONE.get(), STONE_LAMP.get(), COPPER_BELL.get());
+            this.tag(BlockTags.MINEABLE_WITH_AXE).add(WOOD_BELL.get());
+
+            this.tag(BlockTags.REPLACEABLE_PLANTS).add(BLUE_HYDRANGEA.get(), PINK_HYDRANGEA.get(), CAMELLIA_BUSH.get());
+            this.tag(BlockTags.TALL_FLOWERS).add(BLUE_HYDRANGEA.get(), PINK_HYDRANGEA.get(), CAMELLIA_BUSH.get());
         }
 
     }

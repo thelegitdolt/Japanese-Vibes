@@ -1,9 +1,8 @@
 package com.dolthhaven.japanesevibes.common.blocks;
 
+import com.dolthhaven.japanesevibes.core.registry.JVParticles;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -25,15 +24,14 @@ public class ChimeBlock extends HangingBlock {
 
     public @NotNull InteractionResult use(@NotNull BlockState state, Level level, @NotNull BlockPos pos, @NotNull Player player, @NotNull InteractionHand hand, @NotNull BlockHitResult result) {
         if (level.isClientSide) {
-            level.addParticle(ParticleTypes.NOTE, pos.getX() + 0.5D, pos.getY() -0.5D, pos.getZ() + 0.5D, level.getRandom().nextInt(25) / 24D, 0D, 0D);
-
+            level.addParticle(JVParticles.DOWNWARD_NOTE.get(), pos.getX() + 0.5D, pos.getY() -0.2D,
+                    pos.getZ() + 0.5D, -level.getRandom().nextInt(25) / 24D, 0D, 0D);
             return InteractionResult.SUCCESS;
         }
         else {
-            level.addParticle(ParticleTypes.NOTE, pos.getX() + 0.5D, pos.getY() -0.5D,
-                    pos.getZ() + 0.5D, -level.getRandom().nextInt(25) / 24D, 0D, 0D);
+            if (sound != null)
+                level.playSound(null, pos, sound, SoundSource.BLOCKS, 1.0f, 1.0f);
 
-            level.playSound(null, pos, SoundEvents.BELL_RESONATE, SoundSource.BLOCKS, 1.0f, 1.0f);
             return InteractionResult.CONSUME;
         }
     }
