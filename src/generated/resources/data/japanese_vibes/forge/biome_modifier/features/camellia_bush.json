@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#japanese_vibes:has_feature/camellia_patch",
+  "features": "japanese_vibes:patch_camellia_bush",
+  "step": "vegetal_decoration"
+}

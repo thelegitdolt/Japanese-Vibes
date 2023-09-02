@@ -6,9 +6,9 @@ import com.dolthhaven.japanesevibes.core.data.client.JVItemModels;
 import com.dolthhaven.japanesevibes.core.data.client.JVLang;
 import com.dolthhaven.japanesevibes.core.data.server.JVLoot;
 import com.dolthhaven.japanesevibes.core.data.server.JVRecipes;
-import com.dolthhaven.japanesevibes.core.data.server.tags.JVNewTags;
-import com.dolthhaven.japanesevibes.core.data.server.tags.JVTags;
 import com.dolthhaven.japanesevibes.core.data.server.modifiers.JVAdvancementModifiers;
+import com.dolthhaven.japanesevibes.core.data.server.modifiers.JVBiomeModifiers;
+import com.dolthhaven.japanesevibes.core.data.server.tags.JVTags;
 import com.dolthhaven.japanesevibes.core.other.JVIntegration;
 import com.dolthhaven.japanesevibes.core.registry.JVParticles;
 import com.mojang.logging.LogUtils;
@@ -17,11 +17,11 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.data.event.GatherDataEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
@@ -67,6 +67,8 @@ public class JapaneseVibes {
         gen.addProvider(server, tags);
         gen.addProvider(server, new JVTags.JVItemTags(event, tags));
         gen.addProvider(server, new JVRecipes(event));
+        gen.addProvider(server, new JVTags.JVBiomeTags(event));
+        gen.addProvider(server, JVBiomeModifiers.register(event));
 
 
         gen.addProvider(client, new JVBlockstatesProvider(event));

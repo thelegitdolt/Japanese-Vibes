@@ -22,7 +22,7 @@ public class JVLang extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        this.add(PAPER_LANTERN.get(), "Paper Lantern");
+        this.simpleBlock(PAPER_LANTERN);
 
         this.paperLantern(PAPER_LANTERN_WHITE);
         this.paperLantern(PAPER_LANTERN_BROWN);

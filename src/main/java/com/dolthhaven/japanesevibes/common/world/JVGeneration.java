@@ -36,6 +36,13 @@ public class JVGeneration {
                                 FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
                                         new SimpleBlockConfiguration(BlockStateProvider.simple(JVBlocks.PINK_HYDRANGEA.get()))))))));
 
+        public static final RegistryObject<ConfiguredFeature<SimpleRandomFeatureConfiguration, ?>> PATCH_CAMELLIA_BUSH =
+                CONFIGURED_FEATURES.register("patch_camellia_bush", () -> new ConfiguredFeature<>(Feature.SIMPLE_RANDOM_SELECTOR,
+                        new SimpleRandomFeatureConfiguration(HolderSet.direct(PlacementUtils.inlinePlaced(Feature.RANDOM_PATCH,
+                                FeatureUtils.simplePatchConfiguration(Feature.SIMPLE_BLOCK,
+                                        new SimpleBlockConfiguration(BlockStateProvider.simple(JVBlocks.CAMELLIA_BUSH.get()))))))));
+
+
 
         private static <FC extends FeatureConfiguration, F extends Feature<FC>> RegistryObject<ConfiguredFeature<FC, ?>> register(String name, Supplier<ConfiguredFeature<FC, F>> feature) {
             return CONFIGURED_FEATURES.register(name, feature);
@@ -46,9 +53,14 @@ public class JVGeneration {
         public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, JapaneseVibes.MOD_ID);
 
         public static final RegistryObject<PlacedFeature> PATCH_BLUE_HYDRANGEA= register("patch_blue_hydrangea", JVFeatures.PATCH_BLUE_HYDRANGEA,
-                RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+                RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
         public static final RegistryObject<PlacedFeature> PATCH_PINK_HYDRANGEA= register("patch_pink_hydrangea", JVFeatures.PATCH_PINK_HYDRANGEA,
+                RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+
+        public static final RegistryObject<PlacedFeature> PATCH_CAMELLIA_BUSH= register("patch_camellia_bush", JVFeatures.PATCH_CAMELLIA_BUSH,
                 RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+
+
 
 
         private static RegistryObject<PlacedFeature> register(String name, RegistryObject<? extends ConfiguredFeature<?, ?>> feature, PlacementModifier... placementModifiers) {

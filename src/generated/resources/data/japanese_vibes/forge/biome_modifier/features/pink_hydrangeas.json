@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#japanese_vibes:has_feature/hydrangea_patch",
+  "features": "japanese_vibes:patch_pink_hydrangea",
+  "step": "vegetal_decoration"
+}

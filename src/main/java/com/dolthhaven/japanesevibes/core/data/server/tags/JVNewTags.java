@@ -4,6 +4,7 @@ import com.dolthhaven.japanesevibes.core.JapaneseVibes;
 import com.teamabnormals.blueprint.core.util.TagUtil;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
 
 public class JVNewTags {
@@ -26,4 +27,13 @@ public class JVNewTags {
             return TagUtil.itemTag(JapaneseVibes.MOD_ID, tagName);
         }
     }
+
+    public static class NewBiomeTags {
+        public static final TagKey<Biome> HAS_HYDRANGEA_PATCH = biomeTag("has_feature/hydrangea_patch");
+        public static final TagKey<Biome> HAS_CAMELLIA_PATCH = biomeTag("has_feature/camellia_patch");
+        private static TagKey<Biome> biomeTag(String tagName) {
+            return TagUtil.biomeTag(JapaneseVibes.MOD_ID, tagName);
+        }
+    }
+
 }

@@ -1,9 +1,12 @@
 package com.dolthhaven.japanesevibes.core.data.server.tags;
 
 import com.dolthhaven.japanesevibes.core.JapaneseVibes;
+import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.data.event.GatherDataEvent;
 
 import static com.dolthhaven.japanesevibes.core.data.server.tags.JVNewTags.NewBlockTags.*;
@@ -61,4 +64,15 @@ public class JVTags {
         }
     }
 
+    public static class JVBiomeTags extends BiomeTagsProvider {
+        public JVBiomeTags(GatherDataEvent e) {
+            super(e.getGenerator(), JapaneseVibes.MOD_ID, e.getExistingFileHelper());
+        }
+
+        @Override
+        public void addTags() {
+            this.tag(JVNewTags.NewBiomeTags.HAS_HYDRANGEA_PATCH).add(Biomes.FLOWER_FOREST);
+            this.tag(JVNewTags.NewBiomeTags.HAS_CAMELLIA_PATCH).add(Biomes.WINDSWEPT_FOREST, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_GRAVELLY_HILLS, Biomes.MEADOW);
+        }
+    }
 }
