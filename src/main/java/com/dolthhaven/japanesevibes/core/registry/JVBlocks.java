@@ -68,7 +68,7 @@ public class JVBlocks {
 
 
     public static final RegistryObject<Block> TATAMI_LANTERN = HELPER.createBlock("tatami_lantern", () -> new UnfloatableBlock(Properties.TATAMI_LANTERN, Hitboxes.TATAMI_LANTERN_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> STONE_LAMP = HELPER.createBlock("stone_lamp", () -> new UniqueBlock(Properties.STONE_LAMP, Hitboxes.STONE_LAMP_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> STONE_LAMP = HELPER.createBlock("stone_lamp", () -> new NotFullBlock(Properties.STONE_LAMP, Hitboxes.STONE_LAMP_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> JIZO_STONE = HELPER.createBlock("jizo_stone", () -> new JizoBlock(BlockBehaviour.Properties.copy(Blocks.STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     public static final RegistryObject<Block> WOOD_BELL = HELPER.createBlock("wood_bell", () -> new ChimeBlock(BlockBehaviour.Properties.copy(Blocks.JUKEBOX), Hitboxes.SMALL_LANTERN_AABB, null), CreativeModeTab.TAB_BUILDING_BLOCKS);

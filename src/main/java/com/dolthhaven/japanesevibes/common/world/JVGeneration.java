@@ -52,12 +52,12 @@ public class JVGeneration {
     public static final class JVPlacedFeatures {
         public static final DeferredRegister<PlacedFeature> PLACED_FEATURES = DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, JapaneseVibes.MOD_ID);
 
-        public static final RegistryObject<PlacedFeature> PATCH_BLUE_HYDRANGEA= register("patch_blue_hydrangea", JVFeatures.PATCH_BLUE_HYDRANGEA,
-                RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
-        public static final RegistryObject<PlacedFeature> PATCH_PINK_HYDRANGEA= register("patch_pink_hydrangea", JVFeatures.PATCH_PINK_HYDRANGEA,
-                RarityFilter.onAverageOnceEvery(12), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        public static final RegistryObject<PlacedFeature> PATCH_BLUE_HYDRANGEA = register("patch_blue_hydrangea", JVFeatures.PATCH_BLUE_HYDRANGEA,
+                RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
+        public static final RegistryObject<PlacedFeature> PATCH_PINK_HYDRANGEA = register("patch_pink_hydrangea", JVFeatures.PATCH_PINK_HYDRANGEA,
+                RarityFilter.onAverageOnceEvery(16), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
-        public static final RegistryObject<PlacedFeature> PATCH_CAMELLIA_BUSH= register("patch_camellia_bush", JVFeatures.PATCH_CAMELLIA_BUSH,
+        public static final RegistryObject<PlacedFeature> PATCH_CAMELLIA_BUSH = register("patch_camellia_bush", JVFeatures.PATCH_CAMELLIA_BUSH,
                 RarityFilter.onAverageOnceEvery(8), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
 
 
