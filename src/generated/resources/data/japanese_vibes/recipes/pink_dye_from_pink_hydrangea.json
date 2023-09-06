@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "japanese_vibes:pink_hydrangea"
+    }
+  ],
+  "result": {
+    "count": 2,
+    "item": "minecraft:pink_dye"
+  }
+}
