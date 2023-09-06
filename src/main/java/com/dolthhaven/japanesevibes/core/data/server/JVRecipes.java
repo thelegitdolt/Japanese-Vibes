@@ -51,6 +51,16 @@ public class JVRecipes extends RecipeProvider {
         paperLanternRedyeRecipe(PAPER_LANTERN_PINK.get(), DyeColor.PINK, stuff);
         paperLanternRedyeRecipe(PAPER_LANTERN_BLACK.get(), DyeColor.BLACK, stuff);
 
+        ShapelessRecipeBuilder.shapeless(PAPER_LANTERN_BLACK_DOT.get())
+                .requires(PAPER_LANTERN_RED.get()).requires(Items.INK_SAC).unlockedBy("has_red_lantern", has(PAPER_LANTERN_RED.get())).unlockedBy("has_dye", has(Items.INK_SAC)).save(stuff);
+        ShapelessRecipeBuilder.shapeless(PAPER_LANTERN_RED_DOT.get())
+                .requires(PAPER_LANTERN_BLACK.get()).requires(Items.REDSTONE).unlockedBy("has_black_lantern", has(PAPER_LANTERN_BLACK.get())).unlockedBy("has_dye", has(Items.REDSTONE)).save(stuff);
+        ShapelessRecipeBuilder.shapeless(PAPER_LANTERN_SUN.get())
+                .requires(PAPER_LANTERN_WHITE.get()).requires(Items.REDSTONE).unlockedBy("has_white_lantern", has(PAPER_LANTERN_WHITE.get())).unlockedBy("has_dye", has(Items.REDSTONE)).save(stuff);
+        ShapelessRecipeBuilder.shapeless(PAPER_LANTERN_OBAKE.get())
+                .requires(PAPER_LANTERN_RED.get()).requires(Items.ENDER_PEARL).unlockedBy("has_red_lantern", has(PAPER_LANTERN_RED.get())).unlockedBy("has_dye", has(Items.ENDER_PEARL)).save(stuff);
+
+
         ShapedRecipeBuilder.shaped(JIZO_STONE.get()).define('a', Blocks.CHISELED_STONE_BRICKS).define('b', Blocks.ANDESITE).pattern("a").pattern("b").unlockedBy("has_chiseled_stone", has(Blocks.CHISELED_STONE_BRICKS)).save(stuff);
         ShapedRecipeBuilder.shaped(STONE_LAMP.get()).define('a', Blocks.STONE).define('b', Blocks.TORCH).pattern("a").pattern("b").pattern("a").unlockedBy("has_stone", has(Blocks.STONE)).unlockedBy("has_torch", has(Blocks.TORCH)).save(stuff);
 
@@ -76,6 +86,9 @@ public class JVRecipes extends RecipeProvider {
         smallLanternRedyeRecipe(MAGENTA_SMALL_LANTERN.get(), DyeColor.MAGENTA, stuff);
         smallLanternRedyeRecipe(PINK_SMALL_LANTERN.get(), DyeColor.PINK, stuff);
         smallLanternRedyeRecipe(BLACK_SMALL_LANTERN.get(), DyeColor.BLACK, stuff);
+
+        ShapedRecipeBuilder.shaped(TATAMI_LANTERN.get()).define('1', Items.PAPER).define('2', Items.BAMBOO).define('3', Items.TORCH)
+                .pattern(" 2 ").pattern("131").pattern(" 2 ").unlockedBy("has_paper", has(Items.PAPER)).unlockedBy("has_torch", has(Items.TORCH)).unlockedBy("has_bamboo", has(Items.BAMBOO)).save(stuff);
 
         ShapelessRecipeBuilder.shapeless(TAIYAKI.get()).requires(Items.WHEAT, 2).requires(Items.COCOA_BEANS).requires(Items.SUGAR).unlockedBy("has_wheat", has(Items.WHEAT)).unlockedBy("has_cocoa_bean", has(Items.COCOA_BEANS)).unlockedBy("has_sugar", has(Items.SUGAR)).save(stuff);
         ShapelessRecipeBuilder.shapeless(SHAVED_ICE.get()).requires(Items.ICE).requires(Items.HONEY_BOTTLE).requires(Items.BOWL).unlockedBy("has_ice", has(Items.ICE)).save(stuff);
