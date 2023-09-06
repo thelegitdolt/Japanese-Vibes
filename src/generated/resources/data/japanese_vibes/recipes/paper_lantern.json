@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "group": "japanese_vibes:paper_lanterns",
   "key": {
     "#": {
       "item": "minecraft:paper"

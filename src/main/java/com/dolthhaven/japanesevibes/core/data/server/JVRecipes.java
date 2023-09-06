@@ -30,9 +30,13 @@ public class JVRecipes extends RecipeProvider {
         super(e.getGenerator());
     }
 
+    private static final String PAPER_LANTERN_GROUP = "japanese_vibes:paper_lanterns";
+    private static final String SMALL_LANTERN_GROUP = "japanese_vibes:small_lanterns";
+
+
     @Override
     protected void buildCraftingRecipes(@NotNull Consumer<FinishedRecipe> stuff) {
-        ShapedRecipeBuilder.shaped(PAPER_LANTERN.get()).define('#', Items.PAPER).define('X', Items.TORCH).define('A', Items.STICK).pattern(" A ").pattern("#X#").pattern("###").unlockedBy("has_torch", has(Items.TORCH)).unlockedBy("has_paper", has(Items.PAPER)).save(stuff);
+        ShapedRecipeBuilder.shaped(PAPER_LANTERN.get()).define('#', Items.PAPER).define('X', Items.TORCH).define('A', Items.STICK).pattern(" A ").pattern("#X#").pattern("###").unlockedBy("has_torch", has(Items.TORCH)).unlockedBy("has_paper", has(Items.PAPER)).group(PAPER_LANTERN_GROUP).save(stuff);
 
         paperLanternRedyeRecipe(PAPER_LANTERN_WHITE.get(), DyeColor.WHITE, stuff);
         paperLanternRedyeRecipe(PAPER_LANTERN_BROWN.get(), DyeColor.BROWN, stuff);
@@ -67,7 +71,7 @@ public class JVRecipes extends RecipeProvider {
         largeFlowerToDyeRecipe(DyeColor.PINK, PINK_HYDRANGEA.get(), stuff);
         largeFlowerToDyeRecipe(DyeColor.LIGHT_BLUE, BLUE_HYDRANGEA.get(), stuff);
 
-        ShapedRecipeBuilder.shaped(SMALL_LANTERN.get()).define('1', Items.PAPER).define('2', Items.STRING).define('3', Items.TORCH)
+        ShapedRecipeBuilder.shaped(SMALL_LANTERN.get()).define('1', Items.PAPER).define('2', Items.STRING).define('3', Items.TORCH).group(SMALL_LANTERN_GROUP)
                 .pattern(" 2 ").pattern("131").pattern(" 2 ").unlockedBy("has_paper", has(Items.PAPER)).unlockedBy("has_torch", has(Items.TORCH)).save(stuff);
 
         smallLanternRedyeRecipe(WHITE_SMALL_LANTERN.get(), DyeColor.WHITE, stuff);
@@ -97,14 +101,14 @@ public class JVRecipes extends RecipeProvider {
     }
 
     private void paperLanternRedyeRecipe(ItemLike lantern, DyeColor color, Consumer<FinishedRecipe> stuff) {
-        redyeRecipe(lantern, col ->  JapaneseVibes.rlOf("paper_lantern_" + col.getName()), color, JVBlocks.PAPER_LANTERN.get(), true, stuff);
+        redyeRecipe(lantern, col ->  JapaneseVibes.rlOf("paper_lantern_" + col.getName()), color, JVBlocks.PAPER_LANTERN.get(), true, PAPER_LANTERN_GROUP, stuff);
     }
 
     private void smallLanternRedyeRecipe(ItemLike lantern, DyeColor color, Consumer<FinishedRecipe> stuff) {
-        redyeRecipe(lantern, col ->  JapaneseVibes.rlOf(col.getName() + "_small_lantern"), color, SMALL_LANTERN.get(), true, stuff);
+        redyeRecipe(lantern, col ->  JapaneseVibes.rlOf(col.getName() + "_small_lantern"), color, SMALL_LANTERN.get(), true, SMALL_LANTERN_GROUP, stuff);
     }
 
-    private void redyeRecipe(ItemLike item, Function<DyeColor, ResourceLocation> itemMap, DyeColor color, ItemLike baseItem, boolean hasColorlessVersion, Consumer<FinishedRecipe> stuff) {
+    private void redyeRecipe(ItemLike item, Function<DyeColor, ResourceLocation> itemMap, DyeColor color, ItemLike baseItem, boolean hasColorlessVersion, String group, Consumer<FinishedRecipe> stuff) {
         Item dye = getDyeFromDyeColor(color);
         ShapelessRecipeBuilder.shapeless(item).requires(Ingredient.of(
                  Arrays.stream(DyeColor.values())
@@ -113,11 +117,11 @@ public class JVRecipes extends RecipeProvider {
                           if (i == item.asItem()) return hasColorlessVersion ? baseItem : null;
                           else return i;
                       }).filter(Objects::nonNull).toArray(ItemLike[]::new)))
-                .requires(dye).unlockedBy("has_thing", has(baseItem)).unlockedBy("has_dye", has(dye)).save(stuff);
+                .requires(dye).unlockedBy("has_thing", has(baseItem)).group(group).unlockedBy("has_dye", has(dye)).save(stuff);
     }
 
     private void largeFlowerToDyeRecipe(DyeColor dye, ItemLike flower, Consumer<FinishedRecipe> consumer) {
-        ShapelessRecipeBuilder.shapeless(getDyeFromDyeColor(dye), 2).requires(flower).unlockedBy("has_flower", has(flower)).save(consumer);
+        ShapelessRecipeBuilder.shapeless(getDyeFromDyeColor(dye), 2).requires(flower).unlockedBy("has_flower", has(flower)).save(consumer, JapaneseVibes.rlOf(dye.getName() + "_dye_from_" + Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(flower.asItem())).getPath()));
     }
 
     public static @NotNull Item getDyeFromDyeColor(DyeColor color) {
