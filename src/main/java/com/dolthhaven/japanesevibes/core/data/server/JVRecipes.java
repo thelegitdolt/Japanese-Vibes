@@ -73,7 +73,7 @@ public class JVRecipes extends RecipeProvider {
         largeFlowerToDyeRecipe(DyeColor.PINK, PINK_HYDRANGEA.get(), stuff);
         largeFlowerToDyeRecipe(DyeColor.LIGHT_BLUE, BLUE_HYDRANGEA.get(), stuff);
 
-        ShapedRecipeBuilder.shaped(SMALL_LANTERN.get()).define('1', Items.PAPER).define('2', Items.STRING).define('3', Items.TORCH).group(SMALL_LANTERN_GROUP)
+        ShapedRecipeBuilder.shaped(SMALL_LANTERN.get(), 2).define('1', Items.PAPER).define('2', Items.STRING).define('3', Items.TORCH).group(SMALL_LANTERN_GROUP)
                 .pattern(" 2 ").pattern("131").pattern(" 2 ").unlockedBy("has_paper", has(Items.PAPER)).unlockedBy("has_torch", has(Items.TORCH)).save(stuff);
 
         smallLanternRedyeRecipe(WHITE_SMALL_LANTERN.get(), DyeColor.WHITE, stuff);
@@ -98,7 +98,7 @@ public class JVRecipes extends RecipeProvider {
 
         ShapelessRecipeBuilder.shapeless(TAIYAKI.get()).requires(Items.WHEAT, 2).requires(Items.COCOA_BEANS).requires(Items.SUGAR).unlockedBy("has_wheat", has(Items.WHEAT)).unlockedBy("has_cocoa_bean", has(Items.COCOA_BEANS)).unlockedBy("has_sugar", has(Items.SUGAR)).save(stuff);
         ShapelessRecipeBuilder.shapeless(SHAVED_ICE.get()).requires(Items.ICE).requires(Items.HONEY_BOTTLE).requires(Items.BOWL).unlockedBy("has_ice", has(Items.ICE)).save(stuff);
-        ShapelessRecipeBuilder.shapeless(CARAMEL_APPLE.get()).requires(Items.SUGAR, 2).requires(Items.APPLE).requires(Items.BOWL).unlockedBy("has_apple", has(Items.APPLE)).unlockedBy("has_sugar", has(Items.SUGAR)).save(stuff);
+        ShapelessRecipeBuilder.shapeless(CARAMEL_APPLE.get()).requires(Items.SUGAR, 2).requires(Items.APPLE).requires(Items.STICK).unlockedBy("has_apple", has(Items.APPLE)).unlockedBy("has_sugar", has(Items.SUGAR)).save(stuff);
 
         ShapedRecipeBuilder.shaped(GLASS_BELL.get()).define('a', Items.GLASS).define('b', Items.STICK).define('c', Items.IRON_NUGGET).pattern(" b ").pattern(" a ").pattern("ccc").unlockedBy("has_glass", has(Items.GLASS)).save(stuff);
         ShapedRecipeBuilder.shaped(COPPER_BELL.get()).define('a', Items.COPPER_BLOCK).define('b', Items.LIGHTNING_ROD).define('c', Items.COPPER_INGOT).pattern("b").pattern("a").pattern("c").unlockedBy("has_copper_block", has(Items.COPPER_BLOCK)).save(stuff);

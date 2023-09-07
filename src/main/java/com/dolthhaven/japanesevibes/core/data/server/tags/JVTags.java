@@ -1,11 +1,13 @@
 package com.dolthhaven.japanesevibes.core.data.server.tags;
 
 import com.dolthhaven.japanesevibes.core.JapaneseVibes;
+import com.dolthhaven.japanesevibes.core.registry.JVPaintings;
 import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.BiomeTags;
+import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.PaintingVariantTags;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraftforge.data.event.GatherDataEvent;
 
@@ -75,4 +77,17 @@ public class JVTags {
             this.tag(JVNewTags.NewBiomeTags.HAS_CAMELLIA_PATCH).add(Biomes.WINDSWEPT_FOREST, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_GRAVELLY_HILLS, Biomes.MEADOW);
         }
     }
+
+    public static class JVPaintingTags extends PaintingVariantTagsProvider {
+
+        public JVPaintingTags(GatherDataEvent e) {
+            super(e.getGenerator(), JapaneseVibes.MOD_ID, e.getExistingFileHelper());
+        }
+
+        @Override
+        public void addTags() {
+            this.tag(PaintingVariantTags.PLACEABLE).add(JVPaintings.THE_WAVE.get());
+        }
+    }
+
 }

@@ -11,6 +11,7 @@ import com.dolthhaven.japanesevibes.core.data.server.modifiers.JVAdvancementModi
 import com.dolthhaven.japanesevibes.core.data.server.modifiers.JVBiomeModifiers;
 import com.dolthhaven.japanesevibes.core.data.server.tags.JVTags;
 import com.dolthhaven.japanesevibes.core.other.JVIntegration;
+import com.dolthhaven.japanesevibes.core.registry.JVPaintings;
 import com.dolthhaven.japanesevibes.core.registry.JVParticles;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
@@ -38,6 +39,7 @@ public class JapaneseVibes {
         REGISTRY_HELPER.register(bus);
 
         JVParticles.PARTICLES.register(bus);
+        JVPaintings.PAINTING_VARIANTS.register(bus);
         JVGeneration.JVFeatures.CONFIGURED_FEATURES.register(bus);
         JVGeneration.JVPlacedFeatures.PLACED_FEATURES.register(bus);
 
@@ -70,6 +72,7 @@ public class JapaneseVibes {
         gen.addProvider(server, new JVRecipes(event));
         gen.addProvider(server, new JVTags.JVBiomeTags(event));
         gen.addProvider(server, JVBiomeModifiers.register(event));
+        gen.addProvider(server, new JVTags.JVPaintingTags(event));
 
 
         gen.addProvider(client, new JVBlockstatesProvider(event));

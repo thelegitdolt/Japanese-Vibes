@@ -1,4 +1,4 @@
-// 1.19.2	2023-09-07T09:10:34.578712	Recipes
+// 1.19.2	2023-09-07T10:13:14.610959	Recipes
 4d7897aea0be00d7ab621f66c3142461ccd3fc9c data/japanese_vibes/advancements/recipes/building_blocks/black_small_lantern.json
 f8ad08520a7af37cb9f3399add84d72592ca8ec0 data/japanese_vibes/advancements/recipes/building_blocks/blue_small_lantern.json
 4773f81ae6c2c10473b7d423b43759c294741f59 data/japanese_vibes/advancements/recipes/building_blocks/brown_small_lantern.json
@@ -51,7 +51,7 @@ bac5becc768faf9d6cbb03c118d22ec182907928 data/japanese_vibes/advancements/recipe
 0d4719b939e3ef54228922917b797d037db2b577 data/japanese_vibes/recipes/black_small_lantern.json
 1566c43340d11663d388c50018818693788e5a72 data/japanese_vibes/recipes/blue_small_lantern.json
 dfce41ed499018fdcc3d96afaa36662e83b0ce0f data/japanese_vibes/recipes/brown_small_lantern.json
-6e2b5325075f4fb9b278fd5fd553a96172425be5 data/japanese_vibes/recipes/caramel_apple.json
+ac2793533a3d3720df48d38c1389b0ae48bf9aa5 data/japanese_vibes/recipes/caramel_apple.json
 0394c23b51849cc1d51c152ffa3c2b0a60e1bc21 data/japanese_vibes/recipes/copper_bell.json
 23bd98cfc1f335c807428efd5becc4849cfbfd56 data/japanese_vibes/recipes/cyan_small_lantern.json
 266ec1ecef2bbb1a9e721cac374bf9c3b59a144c data/japanese_vibes/recipes/glass_bell.json
@@ -90,7 +90,7 @@ a6a050277e08e9936cc9c32260c3df6dc8233fd6 data/japanese_vibes/recipes/pink_small_
 ca41152d6da236e5202fc8ce1fec698b60c47885 data/japanese_vibes/recipes/purple_small_lantern.json
 ce5ed2e156cd2bdfaf637a12ae6462011ac889c2 data/japanese_vibes/recipes/red_small_lantern.json
 9458086935ee2248edb49d8fe43109512112aba1 data/japanese_vibes/recipes/shaved_ice.json
-44e2164183f4733b2081635fd2c807f79507c7e6 data/japanese_vibes/recipes/small_lantern.json
+f5e3cc37f5637d1a2b0b92dbab63557d2140962d data/japanese_vibes/recipes/small_lantern.json
 ff6eba9c71ac04e1765328806fb06131f17ecbdc data/japanese_vibes/recipes/stone_lamp.json
 78c99f06442235f91393efa2961d36e4bed838ae data/japanese_vibes/recipes/taiyaki.json
 05ce961517fa72e1a0ca561a2ed34525a19b8a6a data/japanese_vibes/recipes/tatami_lantern.json
