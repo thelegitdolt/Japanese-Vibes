@@ -1,9 +1,10 @@
 package com.dolthhaven.japanesevibes.core;
 
-import com.dolthhaven.japanesevibes.common.world.JVGeneration;
+import com.dolthhaven.japanesevibes.common.items.world.JVGeneration;
 import com.dolthhaven.japanesevibes.core.data.client.JVBlockstatesProvider;
 import com.dolthhaven.japanesevibes.core.data.client.JVItemModels;
 import com.dolthhaven.japanesevibes.core.data.client.JVLang;
+import com.dolthhaven.japanesevibes.core.data.client.JVSoundEventStuff;
 import com.dolthhaven.japanesevibes.core.data.server.JVLoot;
 import com.dolthhaven.japanesevibes.core.data.server.JVRecipes;
 import com.dolthhaven.japanesevibes.core.data.server.modifiers.JVAdvancementModifiers;
@@ -74,6 +75,7 @@ public class JapaneseVibes {
         gen.addProvider(client, new JVBlockstatesProvider(event));
         gen.addProvider(client, new JVItemModels(event));
         gen.addProvider(client, new JVLang(event));
+        gen.addProvider(client, new JVSoundEventStuff(event));
     }
 
     public static ResourceLocation rlOf(String namespace) {

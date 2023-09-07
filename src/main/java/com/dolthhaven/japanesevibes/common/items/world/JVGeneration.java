@@ -1,4 +1,4 @@
-package com.dolthhaven.japanesevibes.common.world;
+package com.dolthhaven.japanesevibes.common.items.world;
 
 import com.dolthhaven.japanesevibes.core.JapaneseVibes;
 import com.dolthhaven.japanesevibes.core.registry.JVBlocks;

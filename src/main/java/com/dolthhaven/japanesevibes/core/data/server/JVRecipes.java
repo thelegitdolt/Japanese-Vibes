@@ -7,10 +7,12 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -98,25 +100,25 @@ public class JVRecipes extends RecipeProvider {
         ShapelessRecipeBuilder.shapeless(SHAVED_ICE.get()).requires(Items.ICE).requires(Items.HONEY_BOTTLE).requires(Items.BOWL).unlockedBy("has_ice", has(Items.ICE)).save(stuff);
         ShapelessRecipeBuilder.shapeless(CARAMEL_APPLE.get()).requires(Items.SUGAR, 2).requires(Items.APPLE).requires(Items.BOWL).unlockedBy("has_apple", has(Items.APPLE)).unlockedBy("has_sugar", has(Items.SUGAR)).save(stuff);
 
+        ShapedRecipeBuilder.shaped(GLASS_BELL.get()).define('a', Items.GLASS).define('b', Items.STICK).define('c', Items.IRON_NUGGET).pattern(" b ").pattern(" a ").pattern("ccc").unlockedBy("has_glass", has(Items.GLASS)).save(stuff);
+        ShapedRecipeBuilder.shaped(COPPER_BELL.get()).define('a', Items.COPPER_BLOCK).define('b', Items.LIGHTNING_ROD).define('c', Items.COPPER_INGOT).pattern("b").pattern("a").pattern("c").unlockedBy("has_copper_block", has(Items.COPPER_BLOCK)).save(stuff);
+        ShapedRecipeBuilder.shaped(WOOD_BELL.get()).define('a', ItemTags.PLANKS).define('b', Items.STICK).define('c', Items.IRON_NUGGET).pattern(" b ").pattern("aca").pattern(" c ").unlockedBy("has_planks", has(ItemTags.PLANKS)).save(stuff);
     }
 
     private void paperLanternRedyeRecipe(ItemLike lantern, DyeColor color, Consumer<FinishedRecipe> stuff) {
-        redyeRecipe(lantern, col ->  JapaneseVibes.rlOf("paper_lantern_" + col.getName()), color, JVBlocks.PAPER_LANTERN.get(), true, PAPER_LANTERN_GROUP, stuff);
+        redyeRecipe(lantern, col ->  JapaneseVibes.rlOf("paper_lantern_" + col), color, JVBlocks.PAPER_LANTERN.get(), true, PAPER_LANTERN_GROUP, stuff);
     }
 
     private void smallLanternRedyeRecipe(ItemLike lantern, DyeColor color, Consumer<FinishedRecipe> stuff) {
-        redyeRecipe(lantern, col ->  JapaneseVibes.rlOf(col.getName() + "_small_lantern"), color, SMALL_LANTERN.get(), true, SMALL_LANTERN_GROUP, stuff);
+        redyeRecipe(lantern,  col ->  JapaneseVibes.rlOf(col + "_small_lantern"), color, SMALL_LANTERN.get(), true, SMALL_LANTERN_GROUP, stuff);
     }
 
-    private void redyeRecipe(ItemLike item, Function<DyeColor, ResourceLocation> itemMap, DyeColor color, ItemLike baseItem, boolean hasColorlessVersion, String group, Consumer<FinishedRecipe> stuff) {
+    private void redyeRecipe(ItemLike item, Function<String, ResourceLocation> itemMap, DyeColor color, ItemLike baseItem, boolean hasColorlessVersion, String group, Consumer<FinishedRecipe> stuff) {
         Item dye = getDyeFromDyeColor(color);
         ShapelessRecipeBuilder.shapeless(item).requires(Ingredient.of(
                  Arrays.stream(DyeColor.values())
-                      .map(col -> (ItemLike) (Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(itemMap.apply(col)))))
-                      .map(i -> {
-                          if (i == item.asItem()) return hasColorlessVersion ? baseItem : null;
-                          else return i;
-                      }).filter(Objects::nonNull).toArray(ItemLike[]::new)))
+                      .map(col -> (Objects.requireNonNull(ForgeRegistries.ITEMS.getValue(itemMap.apply(col.getName())))))
+                      .map(i -> i == item.asItem() ? (hasColorlessVersion ? baseItem : null) : i).filter(Objects::nonNull).toArray(ItemLike[]::new)))
                 .requires(dye).unlockedBy("has_thing", has(baseItem)).group(group).unlockedBy("has_dye", has(dye)).save(stuff);
     }
 

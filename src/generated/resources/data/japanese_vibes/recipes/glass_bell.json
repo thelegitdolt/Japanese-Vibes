@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "a": {
+      "item": "minecraft:glass"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    },
+    "c": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
+  "pattern": [
+    " b ",
+    " a ",
+    "ccc"
+  ],
+  "result": {
+    "item": "japanese_vibes:glass_bell"
+  }
+}

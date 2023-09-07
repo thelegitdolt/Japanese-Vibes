@@ -11,6 +11,7 @@ import org.codehaus.plexus.util.StringUtils;
 
 import java.util.Objects;
 
+import static com.dolthhaven.japanesevibes.core.data.client.JVSoundEventStuff.getBlockSubtitle;
 import static com.dolthhaven.japanesevibes.core.registry.JVBlocks.*;
 import static com.dolthhaven.japanesevibes.core.registry.JVItems.*;
 
@@ -79,12 +80,20 @@ public class JVLang extends LanguageProvider {
         this.simpleBlock(CAMELLIA_BUSH);
         this.simpleBlock(PINK_HYDRANGEA);
         this.simpleBlock(BLUE_HYDRANGEA);
+
+        this.add(getBlockSubtitle(WOOD_BELL, "chime"),  "Wood Bell Chimes");
+        this.add(getBlockSubtitle(GLASS_BELL, "chime"),  "Glass Bell Chimes");
+        this.add(getBlockSubtitle(COPPER_BELL, "chime"),  "Copper Bell Chimes");
     }
 
     private void paperLantern(RegistryObject<Block> lantern) {
         String path = StringUtils.capitaliseAllWords(Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(lantern.get().asItem())).getPath().replace('_', ' ').substring(14));
 
         this.add(lantern.get(), path + " Paper Lantern");
+    }
+
+    private void subtitle() {
+
     }
 
     private void simpleBlock(RegistryObject<Block> block) {

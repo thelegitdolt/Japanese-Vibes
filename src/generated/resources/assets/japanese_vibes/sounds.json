@@ -1,0 +1,20 @@
+{
+  "bell.copper": {
+    "sounds": [
+      "japanese_vibes:bells/copper"
+    ],
+    "subtitle": "subtitle.block.japanese_vibes.copper_bell.chime"
+  },
+  "bell.glass": {
+    "sounds": [
+      "japanese_vibes:bells/glass"
+    ],
+    "subtitle": "subtitle.block.japanese_vibes.glass_bell.chime"
+  },
+  "bell.wood": {
+    "sounds": [
+      "japanese_vibes:bells/wood"
+    ],
+    "subtitle": "subtitle.block.japanese_vibes.wood_bell.chime"
+  }
+}

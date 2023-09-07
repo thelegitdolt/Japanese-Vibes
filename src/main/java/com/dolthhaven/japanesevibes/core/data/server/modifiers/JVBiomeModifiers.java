@@ -1,6 +1,6 @@
 package com.dolthhaven.japanesevibes.core.data.server.modifiers;
 
-import com.dolthhaven.japanesevibes.common.world.JVGeneration;
+import com.dolthhaven.japanesevibes.common.items.world.JVGeneration;
 import com.dolthhaven.japanesevibes.core.JapaneseVibes;
 import com.dolthhaven.japanesevibes.core.data.server.tags.JVNewTags;
 import com.mojang.serialization.JsonOps;

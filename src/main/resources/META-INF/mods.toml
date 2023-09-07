@@ -6,8 +6,8 @@ license="All rights reserved"
     version="${file.jarVersion}"
     displayName="Japanese Vibes"
     logoFile="examplemod.png"
-    credits="Dolt for da code and OmayPaty for da art and ideas n all that stuff yey"
-    authors="Love, Cheese and small house plants"
+    credits="Dolt for da code and OmayPaty for da art and ideas n all that stuff yey. And Merps for all the fun songs"
+    authors="THe Doltum"
 
 description='''
 This is a long form description of the mod. You can write whatever you want here

@@ -48,5 +48,8 @@
   "block.japanese_vibes.yellow_small_lantern": "Yellow Small Lantern",
   "item.japanese_vibes.caramel_apple": "Caramel Apple",
   "item.japanese_vibes.shaved_ice": "Shaved Ice",
-  "item.japanese_vibes.taiyaki": "Taiyaki"
+  "item.japanese_vibes.taiyaki": "Taiyaki",
+  "subtitle.block.japanese_vibes.copper_bell.chime": "Copper Bell Chimes",
+  "subtitle.block.japanese_vibes.glass_bell.chime": "Glass Bell Chimes",
+  "subtitle.block.japanese_vibes.wood_bell.chime": "Wood Bell Chimes"
 }

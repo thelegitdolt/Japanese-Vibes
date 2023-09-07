@@ -29,8 +29,9 @@ public class ChimeBlock extends HangingBlock {
             return InteractionResult.SUCCESS;
         }
         else {
-            if (sound != null)
-                level.playSound(null, pos, sound, SoundSource.BLOCKS, 1.0f, 1.0f);
+            int note = level.random.nextIntBetweenInclusive(-12,12);
+            float soundPitch = (float) Math.pow(2.0D, (note - 12.0F) / 12.0D);
+            level.playSound(null, pos, sound, SoundSource.BLOCKS, 3.0f, soundPitch);
 
             return InteractionResult.CONSUME;
         }

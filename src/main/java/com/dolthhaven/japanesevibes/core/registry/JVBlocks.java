@@ -71,9 +71,9 @@ public class JVBlocks {
     public static final RegistryObject<Block> STONE_LAMP = HELPER.createBlock("stone_lamp", () -> new NotFullBlock(Properties.STONE_LAMP, Hitboxes.STONE_LAMP_AABB), CreativeModeTab.TAB_BUILDING_BLOCKS);
     public static final RegistryObject<Block> JIZO_STONE = HELPER.createBlock("jizo_stone", () -> new JizoBlock(BlockBehaviour.Properties.copy(Blocks.STONE)), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
-    public static final RegistryObject<Block> WOOD_BELL = HELPER.createBlock("wood_bell", () -> new ChimeBlock(BlockBehaviour.Properties.copy(Blocks.JUKEBOX), Hitboxes.SMALL_LANTERN_AABB, null), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> GLASS_BELL = HELPER.createBlock("glass_bell", () -> new ChimeBlock(BlockBehaviour.Properties.copy(Blocks.GLASS), Hitboxes.SMALL_LANTERN_AABB, null), CreativeModeTab.TAB_BUILDING_BLOCKS);
-    public static final RegistryObject<Block> COPPER_BELL = HELPER.createBlock("copper_bell", () -> new ChimeBlock(BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK), Hitboxes.SMALL_LANTERN_AABB, null), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> WOOD_BELL = HELPER.createBlock("wood_bell", () -> new ChimeBlock(BlockBehaviour.Properties.copy(Blocks.JUKEBOX), Hitboxes.SMALL_LANTERN_AABB, JVSoundEvents.WOOD_BELL.get()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> GLASS_BELL = HELPER.createBlock("glass_bell", () -> new ChimeBlock(BlockBehaviour.Properties.copy(Blocks.GLASS), Hitboxes.SMALL_LANTERN_AABB, JVSoundEvents.GLASS_BELL.get()), CreativeModeTab.TAB_BUILDING_BLOCKS);
+    public static final RegistryObject<Block> COPPER_BELL = HELPER.createBlock("copper_bell", () -> new ChimeBlock(BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK), Hitboxes.SMALL_LANTERN_AABB, JVSoundEvents.COPPER_BELL.get()), CreativeModeTab.TAB_BUILDING_BLOCKS);
 
     public static final RegistryObject<Block> CAMELLIA_BUSH = HELPER.createBlock("camellia_bush", () -> new BlueprintTallFlowerBlock(PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
     public static final RegistryObject<Block> BLUE_HYDRANGEA = HELPER.createBlock("blue_hydrangea", () -> new BlueprintTallFlowerBlock(PropertyUtil.FLOWER), CreativeModeTab.TAB_DECORATIONS);
