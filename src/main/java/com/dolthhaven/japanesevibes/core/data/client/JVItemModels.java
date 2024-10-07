@@ -16,7 +16,7 @@ import static com.dolthhaven.japanesevibes.core.registry.JVItems.*;
 
 public class JVItemModels extends ItemModelProvider {
     public JVItemModels(GatherDataEvent event) {
-        super(event.getGenerator(), JapaneseVibes.MOD_ID, event.getExistingFileHelper());
+        super(event.getGenerator().getPackOutput(), JapaneseVibes.MOD_ID, event.getExistingFileHelper());
     }
 
     @Override

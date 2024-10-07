@@ -18,7 +18,7 @@ import static com.dolthhaven.japanesevibes.core.registry.JVItems.*;
 public class JVLang extends LanguageProvider {
 
     public JVLang(GatherDataEvent e) {
-        super(e.getGenerator(), JapaneseVibes.MOD_ID, "en_us");
+        super(e.getGenerator().getPackOutput(), JapaneseVibes.MOD_ID, "en_us");
     }
 
     @Override

@@ -6,18 +6,18 @@ import com.teamabnormals.blueprint.common.advancement.modification.AdvancementMo
 import com.teamabnormals.blueprint.common.advancement.modification.modifiers.CriteriaModifier;
 import net.minecraft.advancements.RequirementsStrategy;
 import net.minecraft.advancements.critereon.ConsumeItemTrigger;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class JVAdvancementModifiers extends AdvancementModifierProvider {
-
-    public JVAdvancementModifiers(GatherDataEvent e) {
-        super(e.getGenerator(), JapaneseVibes.MOD_ID);
+    public JVAdvancementModifiers(GatherDataEvent event) {
+        super(JapaneseVibes.MOD_ID, event.getGenerator().getPackOutput(), event.getLookupProvider());
     }
 
     @Override
-    protected void registerEntries() {
+    protected void registerEntries(HolderLookup.Provider provider) {
         CriteriaModifier.Builder balancedDiet = CriteriaModifier.builder(this.modId);
         JVItems.HELPER.getDeferredRegister().getEntries().forEach(registryObject -> {
             Item item = registryObject.get();
@@ -26,6 +26,5 @@ public class JVAdvancementModifiers extends AdvancementModifierProvider {
             }
         });
         this.entry("husbandry/balanced_diet").selects("husbandry/balanced_diet").addModifier(balancedDiet.requirements(RequirementsStrategy.AND).build());
-
     }
 }

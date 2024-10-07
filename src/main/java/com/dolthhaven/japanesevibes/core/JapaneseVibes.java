@@ -15,9 +15,12 @@ import com.dolthhaven.japanesevibes.core.registry.JVPaintings;
 import com.dolthhaven.japanesevibes.core.registry.JVParticles;
 import com.mojang.logging.LogUtils;
 import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,6 +29,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+
+import java.util.concurrent.CompletableFuture;
 
 @Mod(JapaneseVibes.MOD_ID)
 public class JapaneseVibes {
@@ -59,18 +64,22 @@ public class JapaneseVibes {
 
     private void dataSetup(GatherDataEvent event) {
         DataGenerator gen = event.getGenerator();
+        ExistingFileHelper helper = event.getExistingFileHelper();
+        PackOutput output = gen.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> provider = event.getLookupProvider();
+
         boolean client = event.includeClient();
         boolean server = event.includeServer();
 
-        JVTags.JVBlockTags tags = new JVTags.JVBlockTags(event);
+        JVTags.JVBlockTags blockTags = new JVTags.JVBlockTags(event);
+        gen.addProvider(server, new JVTags.JVItemTags(output, provider, blockTags.contentsGetter(), helper));
+        gen.addProvider(server, blockTags);
+        gen.addProvider(server, new JVTags.JVBiomeTags(output, provider, helper));
+        gen.addProvider(server, new JVTags.JVPaintingTags(event));
 
         gen.addProvider(server, new JVLoot(event));
-        gen.addProvider(server, new JVTags.JVBlockTags(event));
         gen.addProvider(server, new JVAdvancementModifiers(event));
-        gen.addProvider(server, tags);
-        gen.addProvider(server, new JVTags.JVItemTags(event, tags));
         gen.addProvider(server, new JVRecipes(event));
-        gen.addProvider(server, new JVTags.JVBiomeTags(event));
         gen.addProvider(server, JVBiomeModifiers.register(event));
         gen.addProvider(server, new JVTags.JVPaintingTags(event));
 
@@ -81,7 +90,7 @@ public class JapaneseVibes {
         gen.addProvider(client, new JVSoundEventStuff(event));
     }
 
-    public static ResourceLocation rlOf(String namespace) {
+    public static ResourceLocation rl(String namespace) {
         return new ResourceLocation(MOD_ID, namespace);
     }
 }

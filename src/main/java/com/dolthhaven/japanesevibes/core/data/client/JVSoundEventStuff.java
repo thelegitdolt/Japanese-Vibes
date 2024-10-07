@@ -17,7 +17,7 @@ import java.util.function.Consumer;
 
 public class JVSoundEventStuff extends SoundDefinitionsProvider {
     public JVSoundEventStuff(GatherDataEvent e) {
-        super(e.getGenerator(), JapaneseVibes.MOD_ID, e.getExistingFileHelper());
+        super(e.getGenerator().getPackOutput(), JapaneseVibes.MOD_ID, e.getExistingFileHelper());
     }
 
     @Override

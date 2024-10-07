@@ -25,7 +25,7 @@ import static com.dolthhaven.japanesevibes.core.registry.JVBlocks.*;
 public class JVBlockstatesProvider extends BlockStateProvider {
 
     public JVBlockstatesProvider(GatherDataEvent event) {
-        super(event.getGenerator(), JapaneseVibes.MOD_ID, event.getExistingFileHelper());
+        super(event.getGenerator().getPackOutput(), JapaneseVibes.MOD_ID, event.getExistingFileHelper());
     }
     @Override
     protected void registerStatesAndModels() {
@@ -93,18 +93,18 @@ public class JVBlockstatesProvider extends BlockStateProvider {
 
     private void paperLanternSpecial(RegistryObject<Block> lantern, String type) {
         this.getVariantBuilder(lantern.get()).forAllStates(blockState -> ConfiguredModel.builder()
-                .modelFile(new ModelFile.ExistingModelFile(JapaneseVibes.rlOf("block/paper_lantern_" + type), this.models().existingFileHelper))
+                .modelFile(new ModelFile.ExistingModelFile(JapaneseVibes.rl("block/paper_lantern_" + type), this.models().existingFileHelper))
                 .rotationY(((int) blockState.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
                 .build());
     }
 
     private void existingModel(RegistryObject<Block> block) {
-        this.simpleBlock(block.get(), new ModelFile.ExistingModelFile(JapaneseVibes.rlOf("block/" + this.getName(block)), this.models().existingFileHelper));
+        this.simpleBlock(block.get(), new ModelFile.ExistingModelFile(JapaneseVibes.rl("block/" + this.getName(block)), this.models().existingFileHelper));
     }
 
     private void existingModelWithDirection(RegistryObject<Block> block) {
         this.getVariantBuilder(block.get()).forAllStates(state -> ConfiguredModel.builder()
-                .modelFile(new ModelFile.ExistingModelFile(JapaneseVibes.rlOf("block/" + this.getName(block)), this.models().existingFileHelper))
+                .modelFile(new ModelFile.ExistingModelFile(JapaneseVibes.rl("block/" + this.getName(block)), this.models().existingFileHelper))
                 .rotationY(((int) state.getValue(BlockStateProperties.HORIZONTAL_FACING).toYRot() + 180) % 360)
                 .build());
     }
@@ -157,6 +157,6 @@ public class JVBlockstatesProvider extends BlockStateProvider {
     }
 
     private ConfiguredModel existingModel(String nameSpace) {
-        return new ConfiguredModel(new ModelFile.ExistingModelFile(JapaneseVibes.rlOf(nameSpace), this.models().existingFileHelper));
+        return new ConfiguredModel(new ModelFile.ExistingModelFile(JapaneseVibes.rl(nameSpace), this.models().existingFileHelper));
     }
 }

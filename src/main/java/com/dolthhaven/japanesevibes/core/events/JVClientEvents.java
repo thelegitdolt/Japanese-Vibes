@@ -12,6 +12,6 @@ import net.minecraftforge.fml.common.Mod;
 public class JVClientEvents {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void registerParticles(RegisterParticleProvidersEvent event) {
-        event.register(JVParticles.DOWNWARD_NOTE.get(), DownwardNoteParticle.Provider::new);
+        event.registerSpriteSet(JVParticles.DOWNWARD_NOTE.get(), DownwardNoteParticle.Provider::new);
     }
 }

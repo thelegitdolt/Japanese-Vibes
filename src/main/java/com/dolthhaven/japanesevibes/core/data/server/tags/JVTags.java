@@ -2,30 +2,41 @@ package com.dolthhaven.japanesevibes.core.data.server.tags;
 
 import com.dolthhaven.japanesevibes.core.JapaneseVibes;
 import com.dolthhaven.japanesevibes.core.registry.JVPaintings;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.BiomeTagsProvider;
-import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.data.tags.PaintingVariantTagsProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.PaintingVariantTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.data.BlockTagsProvider;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.concurrent.CompletableFuture;
 
 import static com.dolthhaven.japanesevibes.core.data.server.tags.JVNewTags.NewBlockTags.*;
 import static com.dolthhaven.japanesevibes.core.registry.JVBlocks.*;
 
 public class JVTags {
     public static class JVBlockTags extends BlockTagsProvider {
+
+
         public JVBlockTags(GatherDataEvent e) {
-            super(e.getGenerator(), JapaneseVibes.MOD_ID, e.getExistingFileHelper());
+            super(e.getGenerator().getPackOutput(), e.getLookupProvider(), JapaneseVibes.MOD_ID, e.getExistingFileHelper());
         }
 
         @Override
-        public void addTags() {
+        public void addTags(HolderLookup.@NotNull Provider provider) {
             this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(JIZO_STONE.get(), STONE_LAMP.get(), COPPER_BELL.get());
             this.tag(BlockTags.MINEABLE_WITH_AXE).add(WOOD_BELL.get());
 
-            this.tag(BlockTags.REPLACEABLE_PLANTS).add(BLUE_HYDRANGEA.get(), PINK_HYDRANGEA.get(), CAMELLIA_BUSH.get());
+            this.tag(BlockTags.REPLACEABLE).add(BLUE_HYDRANGEA.get(), PINK_HYDRANGEA.get(), CAMELLIA_BUSH.get());
             this.tag(BlockTags.TALL_FLOWERS).add(BLUE_HYDRANGEA.get(), PINK_HYDRANGEA.get(), CAMELLIA_BUSH.get());
 
             this.tag(JVNewTags.NewBlockTags.PAPER_LANTERNS_COLORED_ONLY).add(
@@ -51,15 +62,12 @@ public class JVTags {
     }
 
     public static class JVItemTags extends ItemTagsProvider {
-
-
-        public JVItemTags(GatherDataEvent e, BlockTagsProvider t) {
-            super(e.getGenerator(), t, JapaneseVibes.MOD_ID, e.getExistingFileHelper());
+        public JVItemTags(PackOutput output, CompletableFuture<HolderLookup.Provider> provider, CompletableFuture<TagLookup<Block>> blockLookup, @Nullable ExistingFileHelper existingFileHelper) {
+            super(output, provider, blockLookup, JapaneseVibes.MOD_ID, existingFileHelper);
         }
 
         @Override
-        public void addTags() {
-
+        public void addTags(HolderLookup.@NotNull Provider provider) {
             this.copy(PAPER_LANTERNS_COLORED_ONLY, JVNewTags.NewItemTags.PAPER_LANTERNS_COLORED_ONLY);
             this.copy(PAPER_LANTERNS, JVNewTags.NewItemTags.PAPER_LANTERNS);
             this.copy(SMALL_LANTERNS, JVNewTags.NewItemTags.SMALL_LANTERNS);
@@ -67,12 +75,13 @@ public class JVTags {
     }
 
     public static class JVBiomeTags extends BiomeTagsProvider {
-        public JVBiomeTags(GatherDataEvent e) {
-            super(e.getGenerator(), JapaneseVibes.MOD_ID, e.getExistingFileHelper());
+
+        public JVBiomeTags(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> provider, @Nullable ExistingFileHelper existingFileHelper) {
+            super(packOutput, provider, JapaneseVibes.MOD_ID, existingFileHelper);
         }
 
         @Override
-        public void addTags() {
+        public void addTags(HolderLookup.@NotNull Provider provider) {
             this.tag(JVNewTags.NewBiomeTags.HAS_HYDRANGEA_PATCH).add(Biomes.FLOWER_FOREST);
             this.tag(JVNewTags.NewBiomeTags.HAS_CAMELLIA_PATCH).add(Biomes.WINDSWEPT_FOREST, Biomes.WINDSWEPT_HILLS, Biomes.WINDSWEPT_GRAVELLY_HILLS, Biomes.MEADOW);
         }
@@ -81,12 +90,12 @@ public class JVTags {
     public static class JVPaintingTags extends PaintingVariantTagsProvider {
 
         public JVPaintingTags(GatherDataEvent e) {
-            super(e.getGenerator(), JapaneseVibes.MOD_ID, e.getExistingFileHelper());
+            super(e.getGenerator().getPackOutput(), e.getLookupProvider(), JapaneseVibes.MOD_ID, e.getExistingFileHelper());
         }
 
         @Override
-        public void addTags() {
-            this.tag(PaintingVariantTags.PLACEABLE).add(JVPaintings.THE_WAVE.get());
+        public void addTags(HolderLookup.@NotNull Provider provider) {
+            this.tag(PaintingVariantTags.PLACEABLE).add(JVPaintings.THE_WAVE.getKey());
         }
     }
 
